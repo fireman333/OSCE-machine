@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OSCE 刷題機 · OSCE Machine</title>
+  <meta name="description" content="OSCE 刷題機：133 例 SP 劇情（含 2025 考古題）+ 重點問診 + 理學檢查 + 鑑別診斷 checklist。GitHub Pages 純前端，免登入。">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --color-primary: #0d9488;
+      --color-warn: #f59e0b;
+      --color-danger: #dc2626;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif; }
+    .card-flip { perspective: 1500px; }
+    .card-inner { transition: transform 0.5s; transform-style: preserve-3d; position: relative; }
+    .card-inner.flipped { transform: rotateY(180deg); }
+    .card-face { backface-visibility: hidden; }
+    .card-back { position: absolute; inset: 0; transform: rotateY(180deg); }
+    .checklist-item { cursor: pointer; user-select: none; }
+    .checklist-item.checked { opacity: 0.55; text-decoration: line-through; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; }
+    .badge-mode-history { background: #dbeafe; color: #1e40af; }
+    .badge-mode-pe { background: #fef3c7; color: #92400e; }
+    .badge-mode-ddx { background: #ede9fe; color: #5b21b6; }
+    .badge-dept { background: #f1f5f9; color: #334155; }
+    .progress-bar { height: 6px; background: #e2e8f0; border-radius: 3px; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, #14b8a6, #0d9488); transition: width 0.3s; }
+    @keyframes fadein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    .fade-in { animation: fadein 0.25s ease-out; }
+  </style>
+</head>
+<body class="bg-slate-50 min-h-screen text-slate-900">
+
+<!-- Header -->
+<header class="bg-white border-b border-slate-200 sticky top-0 z-10">
+  <div class="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div>
+      <h1 class="text-lg font-bold text-teal-700">🩺 OSCE 刷題機</h1>
+      <p class="text-xs text-slate-500" id="subtitle">載入中…</p>
+    </div>
+    <button id="btn-reset" class="text-xs text-slate-400 hover:text-red-600 underline">重置進度</button>
+  </div>
+  <div class="max-w-3xl mx-auto px-4 pb-2">
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width: 0%"></div></div>
+    <p class="text-xs text-slate-500 mt-1" id="progress-text">0 / 0</p>
+  </div>
+</header>
+
+<!-- Filter bar -->
+<section class="max-w-3xl mx-auto px-4 py-3 bg-white border-b border-slate-200 flex flex-wrap gap-2 items-center text-sm">
+  <label class="flex items-center gap-1">
+    <span class="text-slate-500">模式</span>
+    <select id="filter-mode" class="border rounded px-2 py-1 bg-white">
+      <option value="all">全部</option>
+      <option value="history">問診</option>
+      <option value="pe">理學檢查</option>
+      <option value="ddx">鑑別診斷</option>
+    </select>
+  </label>
+  <label class="flex items-center gap-1">
+    <span class="text-slate-500">科別</span>
+    <select id="filter-dept" class="border rounded px-2 py-1 bg-white">
+      <option value="all">全部</option>
+      <option value="內">內科</option>
+      <option value="外">外科</option>
+      <option value="婦">婦產</option>
+      <option value="小">小兒</option>
+      <option value="急">急診</option>
+      <option value="精">精神</option>
+    </select>
+  </label>
+  <label class="flex items-center gap-1">
+    <span class="text-slate-500">範圍</span>
+    <select id="filter-pool" class="border rounded px-2 py-1 bg-white">
+      <option value="all">全部</option>
+      <option value="weak">弱點專練</option>
+      <option value="unseen">未刷過</option>
+    </select>
+  </label>
+  <button id="btn-shuffle" class="ml-auto px-3 py-1 bg-teal-600 hover:bg-teal-700 text-white rounded">🎲 隨機</button>
+</section>
+
+<!-- Main card area -->
+<main class="max-w-3xl mx-auto px-4 py-6">
+  <div id="card-container"></div>
+
+  <!-- Empty state -->
+  <div id="empty-state" class="hidden text-center py-16 text-slate-500">
+    <p class="text-2xl mb-2">🎉</p>
+    <p>目前篩選條件下沒有題目</p>
+    <p class="text-xs mt-2">試試切換模式或科別、或關閉「弱點專練」</p>
+  </div>
+
+  <!-- Navigation -->
+  <div class="mt-6 flex items-center justify-between">
+    <button id="btn-prev" class="px-4 py-2 bg-white border border-slate-300 rounded hover:bg-slate-100">← 上一題</button>
+    <span class="text-sm text-slate-500" id="nav-counter">- / -</span>
+    <button id="btn-next" class="px-4 py-2 bg-white border border-slate-300 rounded hover:bg-slate-100">下一題 →</button>
+  </div>
+</main>
+
+<footer class="max-w-3xl mx-auto px-4 py-8 text-center text-xs text-slate-400">
+  <p>資料來源：114 年 OSCE SP 劇情範例（63 例）+ 2025 OSCE 考古題（30 例）+ 個人 OSCE 筆記整理（40 例）</p>
+  <p class="mt-1">⚠️ 本工具僅供醫學生考前複習參考，臨床決策請依官方指引與主治醫師判斷</p>
+  <p class="mt-1">Made with ❤️ for med students · <a href="https://github.com/" class="underline">GitHub</a></p>
+</footer>
+
+<script src="cases.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
