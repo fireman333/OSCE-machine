@@ -57,6 +57,18 @@ let pool = [];
 let idx = 0;
 let flipped = false;
 let checkedItems = new Set();
+let viewMode = null; // 若使用者用 tab 切換到不同模式，覆蓋 pool[idx].mode
+
+// 取得當前顯示的卡（套用 viewMode 切換後的模式）
+function currentCard() {
+  if (!pool.length) return null;
+  const base = pool[idx];
+  if (viewMode && viewMode !== base.mode) {
+    const overridden = allCards.find(c => c.caseId === base.caseId && c.mode === viewMode);
+    if (overridden) return overridden;
+  }
+  return base;
+}
 
 // ---- Filters ----
 function applyFilters() {
@@ -84,6 +96,7 @@ function applyFilters() {
 
   idx = 0;
   flipped = false;
+  viewMode = null;
   render();
 }
 
@@ -94,6 +107,7 @@ function shufflePool() {
   }
   idx = 0;
   flipped = false;
+  viewMode = null;
   render();
 }
 
@@ -133,7 +147,7 @@ function render() {
   }
   empty.classList.add("hidden");
 
-  const card = pool[idx];
+  const card = currentCard();
   const c = card.case;
   const progress = loadProgress();
   const myProgress = progress[card.id];
@@ -151,15 +165,31 @@ function render() {
       }（已刷 ${myProgress.attempts} 次）</span>`
     : "";
 
+  // Mode tabs（同一 case 內切換問診/PE/DDx）
+  const modeTabs = MODES.map(m => {
+    const cardId = `${c.id}-${m}`;
+    const p = progress[cardId];
+    const dot = p?.result === "correct" ? "🟢"
+              : p?.result === "partial" ? "🟡"
+              : p?.result === "wrong"   ? "🔴" : "⚪️";
+    const isActive = m === card.mode;
+    return `<button class="mode-tab ${isActive ? "mode-tab-active" : ""}" data-mode="${m}">
+      <span class="text-xs mr-1">${dot}</span>${MODE_LABEL[m]}
+    </button>`;
+  }).join("");
+
   container.innerHTML = `
     <div class="fade-in">
       <div class="bg-white rounded-xl shadow border border-slate-200 overflow-hidden">
         <div class="px-5 py-3 border-b border-slate-100 flex flex-wrap gap-2 items-center text-xs">
           <span class="badge badge-dept">${escapeHtml(c.id)}</span>
           <span class="badge badge-dept">${escapeHtml(c.department)}科</span>
-          <span class="badge ${MODE_BADGE_CLASS[card.mode]}">${MODE_LABEL[card.mode]}</span>
           ${c.system ? `<span class="badge badge-dept">${escapeHtml(c.system)}</span>` : ""}
           <span class="ml-auto">${lastResultBadge}</span>
+        </div>
+
+        <div class="px-5 pt-4 pb-2 flex gap-1.5 border-b border-slate-100">
+          ${modeTabs}
         </div>
 
         <div class="px-5 py-5">
@@ -171,6 +201,16 @@ function render() {
       </div>
     </div>
   `;
+
+  // mode tab handlers（同一 case 切換模式）
+  document.querySelectorAll(".mode-tab").forEach(btn => {
+    btn.addEventListener("click", () => {
+      viewMode = btn.dataset.mode;
+      flipped = false;
+      checkedItems.clear();
+      render();
+    });
+  });
 
   // attach handlers
   if (!flipped) {
@@ -243,12 +283,14 @@ function next() {
   if (!pool.length) return;
   idx = (idx + 1) % pool.length;
   flipped = false;
+  viewMode = null;
   render();
 }
 function prev() {
   if (!pool.length) return;
   idx = (idx - 1 + pool.length) % pool.length;
   flipped = false;
+  viewMode = null;
   render();
 }
 
