@@ -3,11 +3,12 @@
 
 const STORAGE_KEY = "osce-progress-v1";
 const MODES = ["history", "pe", "ddx"];
-const MODE_LABEL = { history: "重點問診", pe: "理學檢查", ddx: "鑑別診斷" };
+// 注意：內部 key 保留 "ddx" 以維持 localStorage 進度相容；UI label 已更新為「病情解釋」
+const MODE_LABEL = { history: "重點問診", pe: "理學檢查", ddx: "病情解釋" };
 const MODE_QUESTION = {
-  history: "👉 請列出此 case 的【重點問診】事項",
+  history: "👉 請列出此 case 的【重點問診】事項，並提出【鑑別診斷】",
   pe: "👉 請列出此 case 的【重點理學檢查】事項",
-  ddx: "👉 請列出此 case 的【鑑別診斷】（≥3 個）"
+  ddx: "👉 請進行【病情解釋】（pathophys / 自然病程）+【處置 / 治療 / 衛教】"
 };
 const MODE_BADGE_CLASS = {
   history: "badge-mode-history",
@@ -152,7 +153,11 @@ function render() {
   const progress = loadProgress();
   const myProgress = progress[card.id];
   const items = c[card.mode] || [];
+  // history mode 帶 DDx；ddx mode 帶 explanation + treatment + redFlags
+  const ddxList = (card.mode === "history" && c.ddx) ? c.ddx : [];
   const redFlags = (card.mode === "ddx" && c.redFlags) ? c.redFlags : [];
+  const explanation = (card.mode === "ddx" && c.explanation) ? c.explanation : [];
+  const treatment = (card.mode === "ddx" && c.treatment) ? c.treatment : [];
 
   const lastResultBadge = myProgress?.result
     ? `<span class="text-xs px-2 py-0.5 rounded ${
@@ -197,7 +202,7 @@ function render() {
           <p class="text-sm leading-relaxed text-slate-800 whitespace-pre-wrap">${escapeHtml(c.vignette)}</p>
         </div>
 
-        ${flipped ? renderBack(items, redFlags, card) : renderFrontPrompt(card)}
+        ${flipped ? renderBack(items, redFlags, card, explanation, treatment, ddxList) : renderFrontPrompt(card)}
       </div>
     </div>
   `;
@@ -248,13 +253,53 @@ function renderFrontPrompt(card) {
   `;
 }
 
-function renderBack(items, redFlags, card) {
-  const list = items.length
-    ? items.map(it => `<li class="checklist-item flex gap-2 py-1.5 px-2 rounded hover:bg-slate-50">
-        <span class="text-teal-600 font-bold">☐</span>
-        <span class="flex-1 text-sm leading-relaxed">${escapeHtml(it)}</span>
-      </li>`).join("")
-    : '<li class="text-sm text-slate-400 italic">（此題尚無 checklist）</li>';
+function renderSection(title, items, color) {
+  if (!items || !items.length) return "";
+  const palette = {
+    teal:   { dot: "text-teal-600",   header: "text-teal-700"   },
+    indigo: { dot: "text-indigo-600", header: "text-indigo-700" },
+    amber:  { dot: "text-amber-600",  header: "text-amber-700"  }
+  }[color] || { dot: "text-slate-600", header: "text-slate-700" };
+  const list = items.map(it => `<li class="checklist-item flex gap-2 py-1.5 px-2 rounded hover:bg-white">
+      <span class="${palette.dot} font-bold">☐</span>
+      <span class="flex-1 text-sm leading-relaxed">${escapeHtml(it)}</span>
+    </li>`).join("");
+  return `
+    <p class="text-xs font-semibold ${palette.header} mt-3 mb-1">${title}</p>
+    <ul class="space-y-0.5">${list}</ul>
+  `;
+}
+
+function renderBack(items, redFlags, card, explanation, treatment, ddxList) {
+  let body;
+  if (card.mode === "history") {
+    // 重點問診 mode：問診 checklist + DDx
+    body = `
+      ${renderSection("重點問診 checklist", items, "teal")}
+      ${renderSection("鑑別診斷 (DDx)", ddxList, "indigo")}
+    `;
+    if (!items.length && !ddxList.length) {
+      body = '<p class="text-sm text-slate-400 italic">（此題尚無 checklist）</p>';
+    }
+  } else if (card.mode === "ddx") {
+    // 病情解釋 mode：病情解釋 + 處置/治療/衛教
+    body = `
+      ${renderSection("病情解釋（pathophys / 自然病程 / 為何治療）", explanation, "indigo")}
+      ${renderSection("處置 / 治療 / 衛教", treatment, "amber")}
+    `;
+    if (!explanation.length && !treatment.length) {
+      body = '<p class="text-sm text-slate-400 italic">（此題尚無 checklist）</p>';
+    }
+  } else {
+    // pe mode：單一 checklist
+    const list = items.length
+      ? items.map(it => `<li class="checklist-item flex gap-2 py-1.5 px-2 rounded hover:bg-white">
+          <span class="text-teal-600 font-bold">☐</span>
+          <span class="flex-1 text-sm leading-relaxed">${escapeHtml(it)}</span>
+        </li>`).join("")
+      : '<li class="text-sm text-slate-400 italic">（此題尚無 checklist）</li>';
+    body = `<ul class="space-y-0.5">${list}</ul>`;
+  }
 
   const flagBlock = redFlags.length ? `
     <div class="mt-4 p-3 bg-red-50 border border-red-200 rounded">
@@ -267,7 +312,7 @@ function renderBack(items, redFlags, card) {
   return `
     <div class="px-5 py-5 bg-slate-50 border-t border-slate-100">
       <p class="text-xs text-slate-500 mb-2">${MODE_LABEL[card.mode]} · 點擊勾選</p>
-      <ul class="space-y-0.5">${list}</ul>
+      ${body}
       ${flagBlock}
       <div class="mt-5 flex flex-wrap gap-2">
         <button class="btn-grade px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded text-sm" data-result="correct">✓ 全對</button>
