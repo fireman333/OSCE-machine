@@ -1,7 +1,7 @@
 # OSCE 刷題機 (OSCE Machine) Spec
 
 _Created: 2026-04-19_
-_Updated: 2026-04-19_
+_Updated: 2026-04-20_
 
 ## Goal
 
@@ -27,11 +27,11 @@ _Updated: 2026-04-19_
 - [x] Mode tab 在同一 case 內可切換三模式
 - [x] 進度 / 弱點專練 / 未刷過 / 科別 / 隨機 全部 functional
 - [x] **133 cases 內容全部依 osce-answer 框架重寫完成**
-- [ ] 線上 deployment rebuild 成功 + hard refresh 可看到新內容
+- [x] 線上 deployment rebuild 成功 + hard refresh 可看到新內容
 
 ## Current status
 
-_Updated: 2026-04-19_
+_Updated: 2026-04-20_
 
 - **Done**:
   - 程式碼層：`app.js` mode tab、`renderBack` 三模式分流、`index.html` dropdown label「病情解釋」
@@ -39,11 +39,16 @@ _Updated: 2026-04-19_
   - **內容重寫**：133 cases 全部依 osce-answer 框架重寫完成（14 chunks × 8-10 cases，分 4 批 launch subagent，全數成功回傳）
   - Merge 完成：cases.js 291,807 bytes，所有 case 保留 ddx + redFlags，history/pe/explanation/treatment 全更新
   - UI 驗證：Claude Preview screenshot 確認三 mode 在 114-01 都正常 render
+  - 致謝：凡鳥手札 OSCE 準備心得 寫入 README + index.html footer
+  - Commit + push 成功：67a08ab「Rewrite all 133 cases per osce-answer framework + add 凡鳥手札 credit」，Pages rebuild 已 built（2026-04-19）
+  - **Auto-grade 建議功能**（2026-04-20）：`app.js` `suggestGrade()` + `updateSuggestedGrade()`，依 checklist 勾選比例自動在 全對/部分對/不會 其中一顆加 ring border（0% → 不會，100% → 全對，中間 → 部分對）；使用者仍可手動點任一顆覆寫；renderBack 加 hint 文字「依勾選比例自動建議評分（框線標示），仍可手動按任一顆覆寫」
+  - Claude Preview 驗證通過：0/10、1/10、10/10 三個勾選狀態下 ring border 正確切到對應按鈕
 - **In progress**: 無
 - **Blocked**: 無
 - **Next**:
-  1. git commit + push `app.js cases.js index.html tools/ spec.md`
-  2. `gh api repos/fireman333/OSCE-machine/pages/builds/latest` 確認 Pages rebuild
+  1. Commit + push `app.js spec.md`（auto-grade 功能）
+  2. 等 Pages rebuild
+  3. （可選）下個 session 想擴充的話：keyboard shortcut 1/2/3 對應三顆評分按鈕、或連續答題模式（按完自動下一張）
 
 ## Decision log
 
@@ -58,3 +63,4 @@ _Updated: 2026-04-19_
 - 2026-04-19: SendMessage 工具在此 session 不可用，無法 mid-flight 戳 agent 問狀態；只能事前把任務切小
 - 2026-04-19: 14 chunks × 8-10 cases 策略成功 — 所有 14 個 subagent 都在 ~200s 內完成 Read→Write，每個平均 60k tokens / 2 tool uses。關鍵：把 prompt 做到完全 self-contained + 明確禁止探索 + 提供 gold example
 - 2026-04-19: 凡鳥手札 OSCE 準備心得 致謝補寫入 README + index.html footer（與中國醫藥大學 OSCE 共筆並列）— osce-answer 框架的答題流程主要參考該部落格
+- 2026-04-20: 加 auto-grade 建議功能（勾選比例 → ring border 標示建議評分，不強制覆寫）— 使用者還是要手動按一顆記進 localStorage，避免「沒仔細看就被自動打分」的誤判；option 2（auto-preselect + 手動彈性 + hint text）優於 option 1（純自動）和 option 3（純手動）

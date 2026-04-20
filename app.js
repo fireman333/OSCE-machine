@@ -227,6 +227,7 @@ function render() {
       el.addEventListener("click", () => {
         if (checkedItems.has(i)) checkedItems.delete(i); else checkedItems.add(i);
         el.classList.toggle("checked");
+        updateSuggestedGrade();
       });
     });
     document.querySelectorAll(".btn-grade").forEach(btn => {
@@ -238,7 +239,27 @@ function render() {
     document.getElementById("btn-unflip").addEventListener("click", () => {
       flipped = false; render();
     });
+    updateSuggestedGrade();
   }
+}
+
+function suggestGrade() {
+  const total = document.querySelectorAll(".checklist-item").length;
+  if (total === 0) return null;
+  const ratio = checkedItems.size / total;
+  if (ratio >= 1.0) return "correct";
+  if (ratio === 0) return "wrong";
+  return "partial";
+}
+
+function updateSuggestedGrade() {
+  const suggested = suggestGrade();
+  document.querySelectorAll(".btn-grade").forEach(btn => {
+    const on = btn.dataset.result === suggested;
+    btn.classList.toggle("ring-2", on);
+    btn.classList.toggle("ring-offset-2", on);
+    btn.classList.toggle("ring-slate-900", on);
+  });
 }
 
 function renderFrontPrompt(card) {
@@ -314,7 +335,8 @@ function renderBack(items, redFlags, card, explanation, treatment, ddxList) {
       <p class="text-xs text-slate-500 mb-2">${MODE_LABEL[card.mode]} · 點擊勾選</p>
       ${body}
       ${flagBlock}
-      <div class="mt-5 flex flex-wrap gap-2">
+      <p class="mt-4 text-xs text-slate-400">依勾選比例自動建議評分（框線標示），仍可手動按任一顆覆寫</p>
+      <div class="mt-2 flex flex-wrap gap-2">
         <button class="btn-grade px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded text-sm" data-result="correct">✓ 全對</button>
         <button class="btn-grade px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded text-sm" data-result="partial">△ 部分對</button>
         <button class="btn-grade px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded text-sm" data-result="wrong">✗ 不會</button>
