@@ -50,6 +50,35 @@
       box-shadow: 0 1px 3px rgba(13,148,136,0.3);
     }
     .mode-tab-active:hover { background: #0f766e; color: white; }
+    .tier-chip {
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      color: #475569;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .tier-chip:hover { background: #f1f5f9; }
+    .tier-chip-active { background: #0d9488; color: white; border-color: #0d9488; }
+    .tier-chip-active:hover { background: #0f766e; }
+    .tier-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      z-index: 1;
+    }
+    .tier-P1 { background: #dc2626; color: white; }
+    .tier-P2 { background: #f97316; color: white; }
+    .tier-P3 { background: #facc15; color: #1f2937; }
   </style>
 </head>
 <body class="bg-slate-50 min-h-screen text-slate-900">
@@ -101,6 +130,15 @@
     </select>
   </label>
   <button id="btn-shuffle" class="ml-auto px-3 py-1 bg-teal-600 hover:bg-teal-700 text-white rounded">🎲 隨機</button>
+</section>
+
+<!-- Tier filter chip group -->
+<section class="max-w-3xl mx-auto px-4 py-2 bg-white border-b border-slate-200 flex flex-wrap gap-2 items-center text-sm">
+  <span class="text-slate-500 mr-1">出題機率</span>
+  <button class="tier-chip tier-chip-active" data-tier="all" title="不過濾 tier">全部</button>
+  <button class="tier-chip" data-tier="P1" title="P1 = 夯（最可能必考）">夯</button>
+  <button class="tier-chip" data-tier="P2" title="P2 = 頂級（次可能）">頂級</button>
+  <button class="tier-chip" data-tier="P3" title="P3 = 人上人（補充廣度）">人上人</button>
 </section>
 
 <!-- Main card area -->

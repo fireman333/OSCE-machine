@@ -2,7 +2,10 @@
 // 依賴：window.OSCE_CASES（cases.js 載入）
 
 const STORAGE_KEY = "osce-progress-v1";
+const TIER_STORAGE_KEY = "osce_tier_filter";
 const MODES = ["history", "pe", "ddx"];
+const TIER_LABEL = { P1: "夯", P2: "頂級", P3: "人上人" };
+const TIER_BADGE_CLASS = { P1: "tier-P1", P2: "tier-P2", P3: "tier-P3" };
 // 注意：內部 key 保留 "ddx" 以維持 localStorage 進度相容；UI label 已更新為「病情解釋」
 const MODE_LABEL = { history: "重點問診", pe: "理學檢查", ddx: "病情解釋" };
 const MODE_QUESTION = {
@@ -59,6 +62,26 @@ let idx = 0;
 let flipped = false;
 let checkedItems = new Set();
 let viewMode = null; // 若使用者用 tab 切換到不同模式，覆蓋 pool[idx].mode
+let tierFilter = "all"; // "all" | "P1" | "P2" | "P3"
+
+function loadTierFilter() {
+  try {
+    const v = localStorage.getItem(TIER_STORAGE_KEY);
+    if (v && ["all", "P1", "P2", "P3"].includes(v)) return v;
+  } catch {}
+  return "all";
+}
+function saveTierFilter(v) {
+  try { localStorage.setItem(TIER_STORAGE_KEY, v); } catch {}
+}
+function setTierFilter(v) {
+  tierFilter = v;
+  saveTierFilter(v);
+  document.querySelectorAll(".tier-chip").forEach(b => {
+    b.classList.toggle("tier-chip-active", b.dataset.tier === v);
+  });
+  applyFilters();
+}
 
 // 取得當前顯示的卡（套用 viewMode 切換後的模式）
 function currentCard() {
@@ -81,6 +104,7 @@ function applyFilters() {
   pool = allCards.filter(card => {
     if (mode !== "all" && card.mode !== mode) return false;
     if (dept !== "all" && card.case.department !== dept) return false;
+    if (tierFilter !== "all" && card.case.tier !== tierFilter) return false;
     if (poolKind === "weak") {
       const r = progress[card.id];
       if (!r || (r.result !== "wrong" && r.result !== "partial")) return false;
@@ -183,9 +207,14 @@ function render() {
     </button>`;
   }).join("");
 
+  const tierBadgeHtml = c.tier && TIER_LABEL[c.tier]
+    ? `<span class="tier-badge ${TIER_BADGE_CLASS[c.tier]}" title="出題機率：${c.tier}">${TIER_LABEL[c.tier]}</span>`
+    : "";
+
   container.innerHTML = `
     <div class="fade-in">
-      <div class="bg-white rounded-xl shadow border border-slate-200 overflow-hidden">
+      <div class="bg-white rounded-xl shadow border border-slate-200 overflow-hidden relative">
+        ${tierBadgeHtml}
         <div class="px-5 py-3 border-b border-slate-100 flex flex-wrap gap-2 items-center text-xs">
           <span class="badge badge-dept">${escapeHtml(c.id)}</span>
           <span class="badge badge-dept">${escapeHtml(c.department)}科</span>
@@ -372,6 +401,12 @@ function init() {
   document.getElementById("filter-mode").addEventListener("change", applyFilters);
   document.getElementById("filter-dept").addEventListener("change", applyFilters);
   document.getElementById("filter-pool").addEventListener("change", applyFilters);
+  // Tier filter chip group
+  tierFilter = loadTierFilter();
+  document.querySelectorAll(".tier-chip").forEach(btn => {
+    btn.classList.toggle("tier-chip-active", btn.dataset.tier === tierFilter);
+    btn.addEventListener("click", () => setTierFilter(btn.dataset.tier));
+  });
   document.getElementById("btn-shuffle").addEventListener("click", shufflePool);
   document.getElementById("btn-next").addEventListener("click", next);
   document.getElementById("btn-prev").addEventListener("click", prev);
