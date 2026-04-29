@@ -54,4 +54,4 @@
 
 - [x] 8.1 確認 `2026-0501 考前猜題-詳盡複習教材.md` 中的 OSCE Machine case_id 引用與 cases.js 實際 tier mapping 一致；不一致則修詳盡複習教材
 - [x] 8.2 準備 git commit message（中英對照）描述 schema migration + UI add，分兩個 commit（資料 commit / UI commit）便於 partial revert
-- [ ] 8.3 等待使用者明確指示再 commit + push（依 Curator rule：never auto commit）
+- [x] 8.3 等待使用者明確指示再 commit + push（依 Curator rule：never auto commit）
