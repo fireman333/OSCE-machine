@@ -1,0 +1,504 @@
+{
+  "_meta": {
+    "source_doc": "2026-0501 考前猜題-詳盡複習教材.md (v2.0, 2026-04-30)",
+    "source_kungbi": "2025-OSCE共筆完稿0826/",
+    "generated_for": "stage-2 OSCE Machine integration after kungbi backfill",
+    "id_prefix": "kungbi-",
+    "tier_legend": {"P2": "頂級", "P3": "人上人"},
+    "card_mapping": {
+      "kungbi-01": "6.13 內 P2-C 頭痛 鑑別+紅旗",
+      "kungbi-02": "6.14 內 P2-D 黃疸 鑑別",
+      "kungbi-03": "6.15 婦 P2-C 產檢 常規+高危",
+      "kungbi-04": "7.34 內 P3-J 腎病/腎炎症候群",
+      "kungbi-05": "7.35 內 P3-K 類風濕性關節炎 RA",
+      "kungbi-06": "7.36 內 P3-L 糖尿病足 DM foot",
+      "kungbi-07": "7.37 婦 P3-G 不孕症 / PCOS",
+      "kungbi-08": "7.38 兒 P3-G 小兒 URI / 腸病毒",
+      "kungbi-09": "7.39 內 P3-M 視力模糊 鑑別"
+    }
+  },
+  "cases": [
+    {
+      "id": "kungbi-01",
+      "source": "kungbi",
+      "tier": "P2",
+      "age": 35,
+      "sex": "F",
+      "department": "內",
+      "system": "神經",
+      "chiefComplaint": "突發雷擊樣頭痛 + 噁心嘔吐 + 頸僵硬",
+      "vignette": "35 歲女性，1 hr 前突發雷擊樣頭痛（thunderclap），峰值 1 min 內到達，VAS 10/10。伴噁心嘔吐 + 畏光 + 頸僵硬。無外傷。BP 165/95、HR 95。家族史：父 SAH 過世。",
+      "history": [
+        "LQQOPERA — L（單側 vs 雙側、固定 vs 交替、眼窩後/額/顳/枕）/ Q（脈搏跳 vs 緊繃 vs 雷擊 vs 灼熱 vs 壓迫）/ Quantity（頻率、單次 duration、到 peak 多久、半夜痛醒？）/ O（abrupt vs insidious、發病年齡）",
+        "PER：失眠/壓力/藥物/酒咖啡/姿勢/Valsalva/高海拔/月經",
+        "Associated：畏光畏聲、噁吐、視覺改變、麻木/無力/言語、頭暈",
+        "特殊 patterns：cranial autonomic（流淚/結膜紅/眼瞼下垂/瞳孔變/鼻塞）、premonitory（migraine 數 hr-d 前打哈欠/嗜睡/頸僵）、postdrome",
+        "紅旗 SNOOP10：> 50 yr 新發、抗凝藥、孕婦/產後、免疫缺陷、家族（aneurysm/tumor）、近期外傷、TOCC"
+      ],
+      "pe": [
+        "Vital signs（雙臂 BP 排 dissection）+ 體溫",
+        "頭頸 bruits、顳動脈壓痛+搏動（GCA）、顱周神經壓痛",
+        "CN 2-7 重點：CN2 瞳孔對稱+視野 bitemporal hemianopia（pituitary）、fundoscopy papilledema（IICP）；CN3/4/6 EOM；CN5/7 臉感運動",
+        "Kernig sign / Brudzinski sign（meningitis）、頸僵硬",
+        "Focal sign（motor / sensory / cerebellar / DTR）"
+      ],
+      "ddx": [
+        "SAH（thunderclap、neck stiffness、Kernig+ → CT 排 → LP 看 xanthochromia）",
+        "Meningitis（發燒+頸僵+畏光）",
+        "ICH（HTN、抗凝、focal）",
+        "GCA（> 50 yr、顳動脈壓痛、jaw claudication、ESR > 50）",
+        "Acute angle-closure glaucoma（眼劇痛+halo+nausea+IOP > 50）",
+        "Migraine / tension / cluster headache（primary）"
+      ],
+      "explanation": [
+        "Thunderclap headache 在 1 min 內到 peak、最壞情況是 SAH（subarachnoid hemorrhage），死亡率 30-50%",
+        "SAH 多由 cerebral aneurysm 破裂（80%）、其次 AVM、創傷",
+        "需立即排除幾個急症：SAH、meningitis、ICH、GCA、acute glaucoma",
+        "如都排除則考慮 primary headache（migraine / tension / cluster）",
+        "SNOOP10 紅旗任一即必影像或 LP 排除 secondary"
+      ],
+      "treatment": [
+        "急性 migraine：NSAID / triptan（< 2 hr 內）+ antiemetic；避鴉片",
+        "Preventive（≥ 4 d/m 或致殘）：propranolol、topiramate、amitriptyline、CGRP mAb",
+        "Tension：NSAID + lifestyle",
+        "Cluster：100% O2 12-15 L × 15 min + sumatriptan SC；prevention verapamil",
+        "SAH：NCCT 排出血 → CTA → neurosurgery clipping/coiling + nimodipine 21 d 預防 vasospasm",
+        "GCA：immediate prednisolone 1 mg/kg + temporal artery biopsy 2 wk 內",
+        "IICP target：ICP < 20 / CPP > 60 / Osm < 320"
+      ],
+      "redFlags": [
+        "Thunderclap onset < 1 min → CT + LP 排 SAH",
+        "Focal neuro sign / GCS↓ → emergent imaging",
+        "發燒 + 頸僵硬 → meningitis（empiric ceftriaxone + vancomycin + dexamethasone）",
+        "> 50 yr 新發 + 顳動脈壓痛 + ESR > 50 → GCA 立即 steroid 不等 biopsy"
+      ]
+    },
+    {
+      "id": "kungbi-02",
+      "source": "kungbi",
+      "tier": "P2",
+      "age": 65,
+      "sex": "M",
+      "department": "內",
+      "system": "GI",
+      "chiefComplaint": "黃疸 1 月 + 上腹痛轉移背 + 灰白便 + 茶色尿",
+      "vignette": "65 歲男性，黃疸 1 個月 + 上腹痛轉移到背 + 灰白便 + 茶色尿 + 體重 -5 kg。HbA1c 9.0。無發燒。Abdomen palpable non-tender GB（Couvosier sign）。疑 pancreatic head cancer / cholangiocarcinoma / CBD stone。",
+      "history": [
+        "LQQOPERA — 黃疸開始時間+進程、伴隨腹痛/發燒/體重/食慾變化、糞色/尿色",
+        "過去：HBV/HCV、酒精、藥物（NSAID、acetaminophen、penicillin、TPN）、輸血、自體免疫",
+        "家族：Gilbert / Wilson / PBC / 胰臟癌",
+        "近期旅遊 / 食物 / 性史 / IV drug",
+        "新發 DM 警示（pancreatic ca 可表現為 new DM）"
+      ],
+      "pe": [
+        "Vital signs（發燒？）、scleral icterus 程度（從上到下進展指標 mild bili 2-3 / 軀幹 5-7 / 手腳掌 > 10）",
+        "Abdomen：RUQ 壓痛 / Murphy / Couvosier sign（無痛 palpable GB → 排惡性）",
+        "Hepatosplenomegaly、腹水 / caput medusae / spider angiomata",
+        "瘀斑 / petechiae（凝血）、neuro asterixis（HE）",
+        "Lymph node（Virchow node）、PR 看大便顏色"
+      ],
+      "ddx": [
+        "Posthepatic / obstructive：pancreatic head cancer（painless + Couvosier）、cholangiocarcinoma、CBD stone（painful + Charcot）、ampullary tumor、IPMN、PSC",
+        "Intrahepatic：viral / alcoholic / drug hepatitis、PBC（AMA+）、cirrhosis、Wilson、HCC",
+        "Prehepatic：hemolysis、Gilbert、massive hematoma 吸收"
+      ],
+      "explanation": [
+        "黃疸來自 bilirubin 代謝異常，三分法 prehepatic（unconj、urobilinogen 正常）/ intrahepatic（mixed、AST/ALT↑↑）/ posthepatic（conj、Alk-P/γ-GT↑、灰白便+茶尿）",
+        "灰白便 + 茶色尿表示 conjugated bilirubin 到不了腸子（obstructive）",
+        "Painless jaundice + Couvosier + 體重↓ → 必排 pancreatic head cancer / ampullary tumor",
+        "Painful jaundice + 發燒寒顫 → cholangitis Charcot triad → 急 ERCP",
+        "新發 DM + jaundice → pancreatic head cancer 警示"
+      ],
+      "treatment": [
+        "Workup：bilirubin total/direct + AST/ALT/Alk-P/γ-GT/INR/albumin → US（first line：膽管擴張？）→ MRCP（無侵入看膽道樹）→ ERCP（治療性 stone removal / stenting / brush cytology）",
+        "EUS-FNA tumor：診斷+分期",
+        "CT abdomen：胰臟腫瘤 + 局部侵犯 + 遠處轉移分期",
+        "Pancreatic head cancer：可切（< 20%）→ Whipple operation；borderline resectable → neoadjuvant chemo；metastatic → palliative chemo + biliary stenting",
+        "Cholangitis：IV 抗生素（pip-tazo / ceftriaxone+metro）+ 急 ERCP biliary drainage"
+      ],
+      "redFlags": [
+        "Charcot（fever+jaundice+RUQ pain）/ Reynolds（+意識+shock）→ 急診 ERCP",
+        "INR > 1.5 + HE → 急性肝衰竭 → transplant 評估",
+        "Painless 黃疸 + 體重 + Couvosier → 必排 pancreatic / biliary cancer"
+      ]
+    },
+    {
+      "id": "kungbi-03",
+      "source": "kungbi",
+      "tier": "P2",
+      "age": 38,
+      "sex": "F",
+      "department": "婦",
+      "system": "婦產",
+      "chiefComplaint": "G3P1A1 GA 20 週轉診（前診所無接生）",
+      "vignette": "38 歲女性 G3P1A1 GA 20 wk，BP 140/85、urine protein/sugar(-)、甲狀腺低下吃 levothyroxine + 鐵劑、地中海貧血（先生未篩）、前胎 39 yr NSD 足月、無 GDM；要求問診 + 衛教。",
+      "history": [
+        "GPA（gravida-para-abortion）+ LMP / EDC（月+9 / 日+7+(週期-28)）",
+        "現孕進程：出血 / 腹痛 / 頭痛 / 痙攣 / 胎動 q1-2hr",
+        "過去產檢項目：唐氏症篩 / 羊穿 / NIPT / 高層次 US / NTD AFP / 胎心音 / 羊水量 / B 肝 C 肝 / 子宮頸抹片 / HPV vaccine",
+        "過去剖腹 / NSD / 產後大出血 / preeclampsia / GDM / preterm / 流產 / 死胎",
+        "內外科病：甲狀腺 / DM / HTN / 自體免疫 / thalassemia / G6PD / SLE",
+        "用藥（FDA pregnancy class）+ 過敏 + ABC（菸酒）+ 家族史（先天異常）+ 配偶健康（thalassemia carrier 必篩）"
+      ],
+      "pe": [
+        "Vital signs（BP！）+ 體重 / BMI / 增重曲線",
+        "甲狀腺、乳房、骨盆腔、胸腹（fundal height = 週數 ± 2 cm）",
+        "胎心音 doppler 120-160",
+        "胎位 Leopold maneuver（28 wk 後）",
+        "水腫、靜脈曲張"
+      ],
+      "ddx": [
+        "Preeclampsia（GA > 20 + BP ≥ 140/90 + 蛋白尿 ≥ 300 mg/24h or sFlt-1/PlGF）",
+        "GDM（24-28 wk OGTT 75g：FPG ≥ 92 / 1hr ≥ 180 / 2hr ≥ 153 任 1 項）",
+        "Thalassemia carriers couple（必篩、1/4 risk major）",
+        "AMA ≥ 35 → NIPT / amnio",
+        "IUGR（fundal height < EGA 2 cm 或 US 估重 < 10%）",
+        "Multiple gestation / placenta previa / accreta / abruption"
+      ],
+      "explanation": [
+        "健保 14 次產檢：8 + 12 wk → 30 wk 前 q4 wk（16/20/24/28）→ 36 wk 前 q2 wk（30/32/34/36）→ 40 wk 前 q1 wk",
+        "3 次 superficial US：第 1 次 8-16 wk（胎兒數 / 心跳 / EDC）/ 第 2 次 20 wk（解剖學掃描）/ 第 3 次 32 wk（胎位 / 胎盤 / 羊水）",
+        "特殊週數 lab：8-12 wk 完整篩 / 24-28 wk OGTT GDM / 32 wk repeat VDRL HIV / 35-37 wk GBS culture",
+        "甲狀腺低下懷孕：levothyroxine 通常需要↑ 30-50%；TSH 目標 < 2.5（first trimester）/ < 3（later）",
+        "地中海貧血：兩人都篩，both carrier → 1/4 baby major risk → 諮詢 amnio + DNA"
+      ],
+      "treatment": [
+        "第一孕期：戒菸酒、葉酸 0.4-0.8 mg/d、避免 vit A 高劑量、運動 30 min × 5/wk（avoid contact sport / hot tub）",
+        "Tdap 27-36 wk、流感 inactive 任何時期、RhoGAM 28 wk if Rh-",
+        "Preeclampsia mild：close monitor（BP qd、UA q1-2 wk、fetal monitor、delivery 37 wk）",
+        "Preeclampsia severe（BP > 160/110、頭痛、視力、上腹痛、HELLP）：IV magnesium sulfate seizure prophylaxis + IV labetalol/hydralazine + 立即 deliver",
+        "GDM：醫療營養治療 + 血糖監測 q1 month；不達標加 insulin"
+      ],
+      "redFlags": [
+        "Preeclampsia severe → IV MgSO4 + 降壓 + deliver",
+        "Eclampsia（seizure）→ MgSO4 + airway",
+        "Placental abruption（painful bleeding + uterine tenderness + fetal distress）→ 急 deliver",
+        "胎動 < 10 次/2 hr（GA > 28 wk）→ NST + BPP",
+        "發燒 + uterine tenderness → chorioamnionitis"
+      ]
+    },
+    {
+      "id": "kungbi-04",
+      "source": "kungbi",
+      "tier": "P3",
+      "age": 60,
+      "sex": "F",
+      "department": "內",
+      "system": "腎臟",
+      "chiefComplaint": "雙下肢水腫 2 月 + 體重↑ + 泡泡尿",
+      "vignette": "60 歲女性，雙下肢水腫 2 月 + 體重 +5 kg + 泡泡尿。吃中草藥 1 yr。BUN 88、Cr 5、eGFR 11、UA proteinuria 4+ + RBC cast、K 5.7。Renal echo bilateral atrophy + hyperechoic。",
+      "history": [
+        "Nephrotic 五聯：proteinuria > 3.5 g/d（or PCR > 3）+ hypoalbuminemia < 3.5 + 水腫 + 高血脂 + 高凝",
+        "Nephritic 五聯：hematuria（dysmorphic RBC + RBC cast）+ proteinuria（< 3.5 g）+ HTN + AKI + edema",
+        "上呼吸道 / 皮膚感染史（PSGN / IgA）、體重變化、藥物（NSAID / 中藥馬兜鈴酸 / 顯影劑 / aminoglycoside）",
+        "自體免疫症狀（SLE 紅斑 / 關節 / 漿膜）、B/C 肝病史（MGN / MPGN）、家族（Alport）",
+        "DM 多久 / HbA1c（diabetic nephropathy）、cancer / multiple myeloma 線索"
+      ],
+      "pe": [
+        "Vital signs（BP！）+ 水腫分布（局部 vs anasarca）",
+        "蝴蝶斑 / discoid / Heberden（RA / OA）、cutaneous vasculitis / palpable purpura（HSP）",
+        "心肺（pleural effusion / 心包膜炎）、abdomen（腹水、肝脾）",
+        "neurology asterixis（uremia）、Kayser-Fleischer ring（Wilson）"
+      ],
+      "ddx": [
+        "Nephrotic：MCD（兒童 77%、selective albuminuria、steroid 反應好）/ FSGS（HIV / heroin / obesity）/ MGN（成人最常見、PLA2R Ab、HBV/HCV / tumor）/ MPGN（HCV、cryoglobulinemia、低 C3）/ Diabetic nephropathy（最常見二發）/ Lupus class V / Amyloidosis",
+        "Nephritic：IgA nephropathy（亞洲最多、URI 後 1-3 d 肉眼血尿）/ PSGN（皮膚/喉嚨後 1-3 wk、C3↓）/ RPGN（crescentic：anti-GBM / ANCA / IC SLE）/ Lupus class III/IV / HSP / Alport / Membranoproliferative"
+      ],
+      "explanation": [
+        "腎絲球受損後蛋白漏出 → albumin↓ → 水腫 + 肝代償合成 lipoprotein → 高血脂",
+        "Nephrotic：濾過屏障電荷或結構受損；nephritic：腎絲球發炎 + RBC 漏出",
+        "戒中草藥（馬兜鈴酸傷腎）+ 避免腎毒（NSAID / aminoglycoside / 顯影劑）",
+        "腎切片 biopsy 是分類關鍵 → 決定治療"
+      ],
+      "treatment": [
+        "Nephrotic：steroid + immunosuppressant（cyclophosphamide / MMF / rituximab，視類型）",
+        "Nephritic：視病因（PSGN 觀察 / IgA SGLT2i+ACEi / RPGN 急救 plasmapheresis + steroid pulse + cyclophosphamide）",
+        "支持療法：ACEi/ARB 降蛋白尿 + statin 降血脂 + 利尿（careful avoid AKI）+ 低鈉飲食 + protein moderate not restrict",
+        "戒中草藥、避腎毒、疫苗（influenza+pneumococcal）",
+        "eGFR < 30 → 開始 RRT 諮詢（HD / PD / transplant）"
+      ],
+      "redFlags": [
+        "Anasarca + 心肺水腫 → 急診",
+        "RPGN（rapidly progressive GN）crescentic → 急 plasmapheresis + pulse steroid",
+        "HE 進展 → uremia 急救 dialysis",
+        "高 K（> 6.5 + EKG change）→ Ca gluconate + insulin/glucose + dialysis"
+      ]
+    },
+    {
+      "id": "kungbi-05",
+      "source": "kungbi",
+      "tier": "P3",
+      "age": 50,
+      "sex": "F",
+      "department": "內",
+      "system": "風濕免疫",
+      "chiefComplaint": "雙手 MCP/PIP 對稱性僵痛 + 晨僵 > 1 hr 持續 3 月",
+      "vignette": "50 歲女性，雙手 MCP / PIP 對稱性僵痛 + 晨僵 > 1 hr 持續 3 月 + 疲倦 + 體重 -3 kg。PE 雙腕腫脹 + squeeze test+。RF+、anti-CCP+、ESR/CRP↑。疑 RA。",
+      "history": [
+        "LQQOPERA — 位置：MCP / PIP / 腕 / MTP 對稱多關節（vs OA：DIP / 髖 / 膝、不對稱）",
+        "晨僵 > 1 hr（vs OA < 30 min）、活動後緩解",
+        "全身症狀：疲倦 / 低燒 / 體重 / Sicca symptom",
+        "關節外：rheumatoid nodules（20-35%、肘 olecranon / 受力點）/ episcleritis / scleritis / interstitial lung disease / Felty's syndrome（splenomegaly + neutropenia）/ vasculitis / 心包炎 / pulmonary nodule",
+        "家族（HLA-DR4）/ 抽菸（高 risk）/ 懷孕計劃（DMARD 致畸）",
+        "過去 handedness 影響職業 / 藥物（過去 NSAID / steroid 反應）"
+      ],
+      "pe": [
+        "雙手 inspection（swan neck、boutonniere、ulnar deviation、MCP/PIP/wrist 腫脹）",
+        "Squeeze test（MCP/MTP joints squeeze 痛）+ 關節 ROM",
+        "Tinel / Phalen / Finkelstein（鑑別 carpal tunnel / De Quervain）",
+        "頸椎檢查（C1-C2 instability 麻醉前必查 X-ray）",
+        "肺（ILD 線索 fine crackle）、皮膚（rheumatoid nodule）、心音（pericardial rub）"
+      ],
+      "ddx": [
+        "RA（對稱+晨僵 > 1 hr+ 多/小關節+ ≥ 6 wk + RF/anti-CCP+）",
+        "OA（DIP Heberden / PIP Bouchard、晨僵 < 30 min、機械痛）",
+        "PsA（dactylitis 香腸指 / nail pitting / 皮膚牛皮癬 / asymmetric / DIP）",
+        "Reactive arthritis（infection 後 1-4 wk、urethritis / conjunctivitis）",
+        "SLE（Jaccoud 形變但可矯正、無 erosion）",
+        "Gout / pseudogout（acute mono）",
+        "Polymyalgia rheumatica（> 50 yr、肩臀近端晨僵、ESR > 50、與 GCA 共病）"
+      ],
+      "explanation": [
+        "RA 是慢性自體免疫滑膜炎 → 對稱多關節、軟骨破壞、joint deformity",
+        "RF / anti-CCP+ 預測 erosive disease 風險高",
+        "6 月 window：早期積極 DMARD 治療能避免關節破壞 → treat-to-target DAS28 < 2.6 remission",
+        "關節外併發症高：lung、heart、vasculitis、Felty",
+        "懷孕計劃：MTX 致畸、停藥 ≥ 3 月再受孕"
+      ],
+      "treatment": [
+        "First-line: methotrexate（MTX）7.5-25 mg PO weekly + folic acid，2-3 月見效",
+        "無效 / 副作用 → biologics（TNFα、IL-6、JAK inhibitors）",
+        "NSAID + low-dose prednisolone bridge 控發炎、hydroxychloroquine 加成",
+        "MTX 監測：肝 / 肺纖 / 骨髓抑制 → CBC / LFT q1-3m",
+        "TNFα 啟用前：IGRA / CXR 篩 TB（reactivation 風險）+ HBV serology（reactivation）",
+        "疫苗：年度 flu+pneumococcal、live vaccine 限制"
+      ],
+      "redFlags": [
+        "Cervical instability C1-C2 → 麻醉前 X-ray（防 spinal cord 損傷）",
+        "Rheumatoid vasculitis（皮膚潰瘍 / mononeuritis multiplex）",
+        "Interstitial lung disease 急惡化 → high-resolution CT",
+        "Felty 嗜中性球減少 → 易感染（敗血症風險）"
+      ]
+    },
+    {
+      "id": "kungbi-06",
+      "source": "kungbi",
+      "tier": "P3",
+      "age": 65,
+      "sex": "M",
+      "department": "內",
+      "system": "內分泌/血管",
+      "chiefComplaint": "DM 15 yr poor control + 雙下肢麻 + 大拇趾潰瘍 2 wk 不癒",
+      "vignette": "65 歲男性，DM 15 yr poor control HbA1c 9 + 雙下肢麻 + 大拇趾潰瘍 2 wk 不癒 + 周邊發紅。PE：light touch / vibration / pin prick / 溫覺**減**、Babinski(-)、ABI 0.6。",
+      "history": [
+        "糖尿病控制：被診斷多久 / 目前 HbA1c / 用藥 / 順從性",
+        "足部症狀：疼痛 / 麻木 / 刺痛 / 燒灼 / 腫紅熱 / 破皮 / 水泡 / 潰瘍 / 壞疽 / 間歇跛行 / 冰冷蒼白",
+        "過去：足部潰瘍 / 截肢史 / 視力障礙 / ESRD / CV disease / 抽菸 / 鞋類 / 足部護理",
+        "DM 併發症 5 大：retinopathy / nephropathy / neuropathy / cardiovascular / foot",
+        "近期感染源（蜂窩組織炎警示：紅腫熱痛擴大 / 發燒 / 全身毒）"
+      ],
+      "pe": [
+        "Sensation 4 種：10g monofilament 觸 / vibration 128 Hz tuning fork / pin prick / 溫覺",
+        "Dorsalis pedis + posterior tibial pulse + ABI（0.6 = moderate）",
+        "足部畸形：hammer toe / claw toe / Charcot（rocker bottom）/ 拇趾外翻",
+        "潰瘍位置：前足大拇趾 / 前腳掌下方最多、足跟 / 足底中部少",
+        "感染：紅腫熱 / 膿 / lymphangitis red streak / 骨髓炎（probe-to-bone test+）"
+      ],
+      "ddx": [
+        "Neuropathic ulcer（painless、足底壓力區、callus 周邊、微血管 OK）",
+        "Ischemic ulcer（painful、外側 / 趾尖、無 callus、pulse↓ ABI < 0.5）",
+        "Mixed neuro-ischemic（最常見）",
+        "Charcot arthropathy（painless 紅腫變形、midfoot rocker bottom、X-ray 看骨破壞）",
+        "Cellulitis vs osteomyelitis（probe-to-bone+、X-ray 骨破壞 6-14 d 後出現、MRI 早期）",
+        "PAOD（已 chapter 6.6）"
+      ],
+      "explanation": [
+        "DM 神經病變 + 周邊動脈疾病 + 免疫低下 → 足部潰瘍癒合差 + 感染擴散快",
+        "Wagner 分級：0 無潰瘍 / 1 淺層 / 2 深至韌帶肌腱 / 3 深 + 骨髓炎或膿瘍 / 4 局部壞疽 / 5 廣泛 > 2/3",
+        "Charcot arthropathy = 神經性關節反覆創傷 → 退化破壞，足踝/TMT/MTP 為主",
+        "近 6% 糖尿病有足；0.5-1.5% 需截肢"
+      ],
+      "treatment": [
+        "Multi-disciplinary care：(1) 嚴格血糖 HbA1c < 7（年輕）/ < 8（老年）",
+        "(2) 傷口照護：debridement / offloading（total contact cast）/ dressing 適配（hydrogel / foam / alginate）",
+        "(3) 感染控制：抗生素涵蓋 GNB+anaerobe；severe → IV pip-tazo / carbapenem",
+        "(4) 血管評估：ABI / TBI / duplex US / angiogram → revascularization 必要時（PTA / bypass）",
+        "(5) Bone X-ray / MRI 排骨髓炎 → osteomyelitis 至少 6 wk IV 抗生素 ± amputation",
+        "戒菸 + 控血壓血脂 + statin + ACEi"
+      ],
+      "redFlags": [
+        "Rest pain / non-healing ulcer > 2 wk → 血管外科會診",
+        "Spreading erythema / fever / 全身毒症 → 急診抗生素 + 外科 debridement",
+        "Probe-to-bone+ → osteomyelitis 必排",
+        "Wet gangrene / sepsis → emergent amputation"
+      ]
+    },
+    {
+      "id": "kungbi-07",
+      "source": "kungbi",
+      "tier": "P3",
+      "age": 38,
+      "sex": "F",
+      "department": "婦",
+      "system": "婦產",
+      "chiefComplaint": "結婚 1 yr 規律 unprotected sex 未孕",
+      "vignette": "38 歲女性，結婚 1 yr 規律 unprotected sex 未孕。BMI 28、月經不規則 q40-60d、多毛+青春痘。TVS 兩側卵巢周邊 ≥ 12 個 2-9 mm 小濾泡 + 卵巢 > 10 mL。Testosterone↑、LH/FSH > 2、AMH↑、TSH 正常。男方 SA 正常。",
+      "history": [
+        "不孕定義：< 35 yr 規律未避孕 1 yr / ≥ 35 yr 或 risk factor 6 月",
+        "不孕時間 + 經產史（週期 / 量 / 痛經 / 過去 P/A）",
+        "性史（避孕 / 頻率 / 性功能）",
+        "過去 STI / PID / 化放療 / 手術",
+        "個人史：年齡 / 職業 / 運動 / 壓力 / 飲食 / 體重 / 抽菸 / 藥物",
+        "PCOS 症狀：多毛 / 青春痘 / 雄性禿 / acanthosis nigricans / 月經不規 / 不孕"
+      ],
+      "pe": [
+        "Vital signs + BMI",
+        "高雄性素徵象：多毛（Ferriman-Gallwey > 8）/ acne / 雄性禿 / clitoromegaly",
+        "Acanthosis nigricans（頸 / 腋下 / 大腿）→ 胰島素阻抗",
+        "甲狀腺、乳房（galactorrhea → hyperprolactinemia）",
+        "Pelvic exam（uterus / ovary）+ TVS"
+      ],
+      "ddx": [
+        "PCOS（Rotterdam 3 中 ≥ 2：月經少 + 高雄性素 + US 多囊）",
+        "WHO class 1 hypo-hypo（過量運動 / 節食）",
+        "WHO class 3 hyper-hypo（POI）",
+        "Hyperprolactinemia（無月經 + 不孕 + 乳漏）",
+        "甲狀腺異常（hypo / hyper）",
+        "Tubal factor（PID / 手術 / TB → HSG）",
+        "子宮因素（adhesion / 黏膜下肌瘤 / polyp / septum）",
+        "男性因素（SA 必查）"
+      ],
+      "explanation": [
+        "PCOS 是最常見的內分泌不孕原因，胰島素阻抗 + 高雄性素 + 慢性無排卵互相加重",
+        "Rotterdam criteria 3 中 2：月經少 / 無排卵 + 高雄性素（臨床或血）+ US 多囊",
+        "長期 risk：T2DM、心血管、子宮內膜癌（無 progestin 拮抗）、OSA、NAFLD",
+        "減重 5-10% 即顯著改善排卵 + 胰島素敏感度"
+      ],
+      "treatment": [
+        "減重 + 運動 + 低 GI 飲食為核心",
+        "不想懷孕：COC（保護內膜+痘多毛）/ progestin / Mirena IUD",
+        "想懷孕 first-line：Letrozole 2.5 mg PO d3-7（優於 clomiphene）",
+        "Clomiphene 50-150 mg / Metformin 1500 mg/d（改善胰島素+減 GDM）",
+        "Above 失敗 → Gonadotropin 或 IVF",
+        "雄性素（多毛痘）：spironolactone 50-100 mg + COC"
+      ],
+      "redFlags": [
+        "OHSS（ovarian hyperstimulation syndrome）IVF 後腹脹 + 體重↑ + 呼吸困難 → 急診",
+        "Endometrial cancer 警示：menstruation 缺 ≥ 3 月 → endometrial biopsy",
+        "GDM / preeclampsia 高風險（懷孕後密切監測）"
+      ]
+    },
+    {
+      "id": "kungbi-08",
+      "source": "kungbi",
+      "tier": "P3",
+      "age": 4,
+      "sex": "M",
+      "department": "兒",
+      "system": "感染",
+      "chiefComplaint": "發燒 2 d 38°C + 口腔水泡 + 喉嚨痛 + 拒食",
+      "vignette": "4 歲男童，發燒 2 d 最高 39°C + 口腔水泡 + 喉嚨痛 + 拒食。阿嬤帶來。PE：口腔後部水泡多、手腳水泡少。診所說腸病毒咽峽炎。家有 2 歲妹妹擔心傳染。",
+      "history": [
+        "發燒（天數 + 最高溫 + TOCC）+ 活力（吃飯時哭鬧 / 拒奶）",
+        "ENT+chest：耳水 / 鼻塞 / 咳痰 / 聲音變 / stridor / 喘 / 吞嚥困難",
+        "CV（胸痛 / 水腫）/ GI（食慾 / 嘔 / 瀉）/ GU（尿量 / 色）/ 皮膚（疹）",
+        "新生兒/小兒基本盤：GPA / BBW / NSD or CS / 生產困難 / 先天異常 / 發展 / 疫苗 / 生長百分位",
+        "EV71 重症 risk：嗜睡 / 嘔吐 / myoclonic jerk / 抽搐 / 喘"
+      ],
+      "pe": [
+        "Vital signs + 體溫 + 活力",
+        "口腔：水泡位置（HFMD 前部 / Herpangina 後部）+ 扁桃腺",
+        "手腳：HFMD 水泡（手掌 / 腳底 / 膝肘 / 臀）",
+        "ENT：耳鏡（AOM）/ 咽喉化膿 / 頸 LN",
+        "心肺神經：心律 / 喘 / focal sign（EV71 brainstem encephalitis 警示）"
+      ],
+      "ddx": [
+        "Common cold / URI（rhinovirus、coronavirus、parainfluenza、RSV）：流鼻+咳+低燒",
+        "HFMD / Herpangina（腸病毒、coxsackie A）：38-39°C + 口腔水泡 + 拒食；EV71 重症 risk",
+        "GAS pharyngitis（Centor criteria：發燒+扁桃腺膿+前頸 LN+無咳嗽）→ rapid strep + abx",
+        "Acute laryngitis / Croup（barking cough + stridor + low fever）",
+        "Epiglottitis（H. influenzae b、急性高燒+drooling+tripod position+no cough → 不刺激不壓舌、急 OR 插管）",
+        "AOM（耳痛 + bulging TM）",
+        "COVID-19"
+      ],
+      "explanation": [
+        "腸病毒咽峽炎是常見上呼吸道感染，多 5-7 d 自癒",
+        "EV71 是重症 risk 最高的腸病毒型（腦炎 / 心肌炎 / 神經肌肉）",
+        "腸病毒對酒精無效，必須含氯漂白水 500 ppm（污染物 1000 ppm）",
+        "病毒可在冷凍存活數月，但 50°C 以上熱水迅速失活；紫外線 / 日曬有助",
+        "傳染力強：糞口、飛沫、皮膚水泡接觸；發病前已具傳染力，發病後 1 週內最強"
+      ],
+      "treatment": [
+        "支持療法：退燒 acetaminophen 15 mg/kg PO q4-6h（max 75 mg/kg/d）",
+        "鼓勵喝水（mild dehydration → ORS）+ 軟質清淡飲食",
+        "症狀控制：mouthwash（salt water）+ topical analgesic",
+        "EV71 疫苗（自費 2 月-6 yr 開始；2 yr 以下 3 劑、2 yr 以上 2 劑）",
+        "預防：洗手 + 隔離 + 不共用餐具 + 漂白水 500 ppm 消毒玩具/門把",
+        "妹妹隔離：分房 + 分餐具 + 阿嬤照顧時洗手"
+      ],
+      "redFlags": [
+        "EV71 重症 5 警示（必教阿嬤）：嗜睡 / 意識改變 / 持續嘔吐 / 手足無力或 myoclonic jerk（心肌炎/腦炎）/ 抽搐 / 呼吸喘心跳快 → 任一即急診",
+        "脫水：< 6 wet diaper / 哭無淚 / 嗜睡 / refill > 2 sec",
+        "二度感染（細菌）：高燒 > 72 hr 不退 + 局部紅腫"
+      ]
+    },
+    {
+      "id": "kungbi-09",
+      "source": "kungbi",
+      "tier": "P3",
+      "age": 60,
+      "sex": "F",
+      "department": "內",
+      "system": "神經/眼科",
+      "chiefComplaint": "視力模糊 1 wk 從外圍開始黑 + BP 220/110",
+      "vignette": "60 歲女性，1 wk 視力模糊從外圍開始黑進行性 + BP 220/110。無頭痛無 focal sign。疑 acute angle-closure glaucoma / pituitary tumor / hypertensive retinopathy / IICP。",
+      "history": [
+        "Step 1 單眼 vs 雙眼（遮一隻測）：單眼 → 眼科；雙眼 → 神經",
+        "Step 2 眼睛運動（EOM）+ 眼震",
+        "視覺路徑相關：muscle（Graves' / TED）/ NMJ（MG）/ brain（pituitary tumor / stroke / IICP）/ eye（glaucoma / retinal detachment / CRAO / GCA）",
+        "MG 線索：diurnal worse evening、asymmetric ptosis、EOM limit、近端 weakness、bulbar+respiratory if MuSK Ab+",
+        "急症排除：眼劇痛+halo+nausea（angle-closure）/ painless monocular sudden（CRAO）/ > 50 + headache + jaw claudication（GCA）/ floaters + flashes + curtain（retinal detachment）"
+      ],
+      "pe": [
+        "視力（Snellen chart）+ 視野（confrontation / Humphrey）+ pupil 大小+對 light",
+        "EOM 6 cardinal + 眼震 + 眼瞼下垂",
+        "Fundoscopy：papilledema（IICP）/ cherry red spot（CRAO）/ retinal hemorrhage / cotton wool spots（HTN）",
+        "IOP（指尖觸 / Goldmann tonometry）",
+        "顳動脈壓痛（GCA）/ 神經學 focal sign / Cushing triad（IICP）"
+      ],
+      "ddx": [
+        "Acute angle-closure glaucoma（眼劇痛+halo+nausea+IOP > 50+中等散瞳 5-6 mm）",
+        "Central retinal artery occlusion CRAO（painless monocular sudden + cherry red spot, 90 min window）",
+        "GCA / temporal arteritis（> 50+headache+jaw claudication+ESR+monocular vision loss）",
+        "Retinal detachment（floaters+flashes+curtain）",
+        "Stroke / TIA（focal sign）",
+        "Pituitary tumor / apoplexy（bitemporal hemianopia）",
+        "MG（diurnal、asymmetric ptosis、EOM limit、peek/lid twitch/curtain sign）",
+        "CO 中毒（多人 + 假性 SpO2 正常 + carboxyHb）",
+        "Hypertensive retinopathy / encephalopathy（BP 220/110）"
+      ],
+      "explanation": [
+        "視力模糊 + HTN 220/110 必須先排：(1) acute angle-closure glaucoma (2) hypertensive retinopathy / encephalopathy (3) stroke (4) GCA",
+        "急性 angle-closure glaucoma 是眼科急診，IOP > 50 → 不治療幾小時內 permanent vision loss",
+        "GCA 不治療幾天到幾週對側眼也會失明 → 立即 prednisolone 1 mg/kg + temporal artery biopsy 2 wk",
+        "CRAO 90 min window：digital ocular massage + IV acetazolamide + paracentesis",
+        "Pituitary tumor bitemporal hemianopia：MRI sella + 內分泌全套（prolactin、cortisol、TSH）"
+      ],
+      "treatment": [
+        "Acute angle-closure glaucoma：carbachol（pilocarpine）+ timolol + acetazolamide PO + 必要時 mannitol IV → laser iridotomy 確定治療",
+        "Hypertensive emergency：IV nicardipine / labetalol，第 1 hr 降幅 < 25%、目標 6 hr < 160/100",
+        "Stroke：CT 排出血 → 若 ischemic + < 4.5 hr alteplase；大血管 + < 24 hr thrombectomy",
+        "GCA：immediate prednisolone 1 mg/kg（不等 biopsy）+ temporal artery biopsy 2 wk 內",
+        "CRAO：digital massage + IV acetazolamide + anterior chamber paracentesis（時間關鍵）",
+        "MG：pyridostigmine + steroid + thymectomy 評估"
+      ],
+      "redFlags": [
+        "突發單眼視力喪失 → CRAO / GCA / retinal detachment 急診",
+        "Halo + 眼痛 + 頭痛 → angle-closure glaucoma 急診",
+        "Floaters + flashes + curtain → retinal detachment",
+        "雙眼 vision change + 神經症狀 → stroke / pituitary apoplexy / IICP",
+        "Diplopia + headache → 排 stroke / aneurysm / GCA"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "_meta": {
+    "purpose": "Append 共筆-derived high-yield bullets to existing tier-classified cases (P1 + P2 priority)",
+    "source": "2025-OSCE共筆完稿0826/",
+    "date": "2026-04-30",
+    "policy": "APPEND only — do not modify existing bullets; preserve original ordering",
+    "tag_format": "[共筆] prefix marks bullets sourced from 2025 共筆"
+  },
+  "patches": [
+    {
+      "id": "114-45",
+      "topic": "甲狀腺亢進 (P1)",
+      "kungbi_ref": "02_貳/09_甲狀腺亢進.md + 10_甲狀腺低下.md",
+      "history_add": [
+        "[共筆] T3 vs T4 dominance：T3-toxicosis 早期 Graves 或 toxic nodule (TT3 ↑ but FT4 normal) — 必驗 TT3 (FT3 檢測未廣泛驗證)",
+        "[共筆] 含碘來源：amiodarone (含碘 37%) / lithium / 含碘顯影劑 / 海帶紫菜過量"
+      ],
+      "treatment_add": [
+        "[共筆] Burch-Wartofsky thyroid storm score ≥ 45 → ICU；PTU 200 mg q4h + propranolol + hydrocortisone 100 mg + Lugol's iodide (PTU 後 ≥ 1 hr 給)",
+        "[共筆] 漢人 / 韓人 / 泰人 antithyroid drug 前查 HLA-B*5801 (agranulocytosis / SJS 風險)",
+        "[共筆] 孕婦 first trimester 用 PTU；其餘時期 methimazole；放射碘孕婦禁忌"
+      ],
+      "redFlags_add": [
+        "[共筆] Thyroid storm: 高燒 > 39°C + 譫妄 + HR > 140 + HF + GI 症狀 → ICU + Burch-Wartofsky score"
+      ]
+    },
+    {
+      "id": "114-07",
+      "topic": "缺鐵性貧血 (P1)",
+      "kungbi_ref": "02_貳/11_貧血.md",
+      "history_add": [
+        "[共筆] PICA 詢問：吃冰塊 / 泥土 / 紙 (IDA 特徵)",
+        "[共筆] 月經量化：1 hr 換衛生棉 + 大血塊 → 月經過多 (menorrhagia)"
+      ],
+      "pe_add": [
+        "[共筆] Glossitis (光滑舌)、koilonychia (湯匙指甲)、angular cheilitis、conjunctival pallor、palmar crease pallor"
+      ],
+      "treatment_add": [
+        "[共筆] Mentzer index = MCV / RBC count：< 13 → 想 thalassemia (Hb 電泳)；> 13 → 想 IDA",
+        "[共筆] CHr (reticulocyte Hb content) 在 CKD / 發炎下不受 ferritin 干擾 — 早期偵測 functional iron deficiency"
+      ],
+      "redFlags_add": [
+        "[共筆] 新發 IDA 男性 / 停經後女性 → 必查大腸鏡排 GI 惡性"
+      ]
+    },
+    {
+      "id": "114-56",
+      "topic": "DKA (P1)",
+      "kungbi_ref": "02_貳/18_DKA _ HHS.md",
+      "history_add": [
+        "[共筆] 5 I 誘因：Infection / Insulin missing / Infarction / Inflammation / Iatrogenic (steroids / SGLT2i)",
+        "[共筆] euDKA 警示：SGLT2i 用藥 + 急性病 / 手術 → BG 可正常 < 200 但仍 ketosis + acidosis"
+      ],
+      "pe_add": [
+        "[共筆] Kussmaul 深快呼吸 + 爛蘋果味 (acetone breath) + DKA pseudoperitonitis (腹痛但腹軟)"
+      ],
+      "treatment_add": [
+        "[共筆] K 補充原則：K < 3.3 先補 K 才給 insulin / K 3.3-5.2 insulin + 20-30 mEq/L K / K > 5.2 暫不補",
+        "[共筆] Insulin protocol：0.1 U/kg/hr drip 直到 anion gap closed；BG < 200 切換 D5 並 overlap SC insulin 1-2 hr 再停 drip 避免 rebound DKA",
+        "[共筆] DKA vs HHS：HHS BG > 600 + osm > 320 + 微 ketone + 神經學顯著 + mortality 10-20% (vs DKA 1-5%)"
+      ]
+    },
+    {
+      "id": "114-47",
+      "topic": "自發性氣胸 (P1)",
+      "kungbi_ref": "02_貳/01_氣胸.md",
+      "history_add": [
+        "[共筆] 5 大分類：Simple / Tension (單向閥) / Hydropneumothorax / Pneumothorax ex vacuo / Bilateral (buffalo chest / 嚴重肺病 PJP CF)",
+        "[共筆] 吸菸 dose-response：男 7-21-102× / 女 4-14-68×；輕 1-12 / 中 13-22 / 重 > 22 根/d"
+      ],
+      "pe_add": [
+        "[共筆] Tension 症狀診斷不等 CXR：低 BP + HR↑ + 嚴重喘 + 氣管偏移 + JVP↑ → 立即 needle decompression 第 2 肋間鎖骨中線"
+      ],
+      "treatment_add": [
+        "[共筆] Chest tube 位置：第 4-5 肋間中腋線 (safe triangle) → underwater seal",
+        "[共筆] 拔管：no air leak 24-48 hr + CXR 無 PTX → 夾管 4-12 hr → 重 CXR → 拔",
+        "[共筆] 手術 indication：first ipsilateral recurrence / 對側 PTX / persistent air leak > 5-7 d / hemothorax / bilateral / 高風險職業 → VATS bullectomy + pleurodesis"
+      ]
+    },
+    {
+      "id": "RM-12",
+      "topic": "HIVD (P1)",
+      "kungbi_ref": "02_貳/13_HIVD.md",
+      "history_add": [
+        "[共筆] 90%+ HIVD 在 L4-5 / L5-S1 (後縱韌帶在 L4-5 處外側較薄)",
+        "[共筆] 紅旗區別：cancer 骨轉 (乳/肺/攝護腺/甲狀/腎細) / multiple myeloma / spinal epidural abscess (背痛+發燒+神經缺損) / AS (晨僵+uveitis+夜痛+家族)"
+      ],
+      "pe_add": [
+        "[共筆] L3-L4 (L4 root)：大腿前 / 膝 extension / 內踝 / 膝跳反射",
+        "[共筆] L4-L5 (L5 root)：下肢後 / 拇趾上抬 + 脛前肌 / 大腳趾 web / (無反射對應)",
+        "[共筆] L5-S1 (S1 root)：下肢後 + 腳踝 / 踮腳 / 足部外側 / 跟腱反射"
+      ],
+      "treatment_add": [
+        "[共筆] Cauda equina (鞍區麻 + 大小便失禁 + 雙下肢無力) → 緊急 MRI + 神經外科會診 / decompression < 48 hr"
+      ]
+    },
+    {
+      "id": "2025-04",
+      "topic": "熱痙攣 (P1, 兒)",
+      "kungbi_ref": "04_肆/04_熱性痙攣Febrile convulsion.md",
+      "history_add": [
+        "[共筆] Simple FS (75%)：6m-6y、< 15 min、generalized、24 hr 內 1 次、退燒後 EEG 10d 恢復、預後良好",
+        "[共筆] Complex FS (25%)：< 6m or > 6y / > 15 min / focal / 24 hr 內 ≥ 2 次 / EEG 不正常 / 變癲癇 risk 略升 (4-6%)",
+        "[共筆] 必排腦膜炎：頸僵 + Kernig + Brudzinski + bulging fontanelle"
+      ],
+      "treatment_add": [
+        "[共筆] Status (FS > 30 min) = 熱性重積型癲癇 → 急救 lorazepam IV / midazolam buccal",
+        "[共筆] 退燒藥 (acetaminophen / ibuprofen) **不能預防 FS** — 只降不適"
+      ]
+    },
+    {
+      "id": "2025-29",
+      "topic": "VSD (P1, 兒)",
+      "kungbi_ref": "04_肆/01_小兒先天性心臟病.md",
+      "history_add": [
+        "[共筆] VSD 解剖三分：Subarterial (易致 AR) / Perimembranous (最常見 70%) / Muscular (最易自閉)",
+        "[共筆] 大小分類：小 (< 5 mm, Roger 病) 自閉觀察 / 中 (5-15 mm) 心衰藥物 / 大 (> 15 mm or > AV 半徑) 必手術修補避 Eisenmenger"
+      ],
+      "pe_add": [
+        "[共筆] Murmur 矛盾原則：小洞 high gradient → murmur 反而響；大洞 / Eisenmenger → murmur 變柔",
+        "[共筆] 中大型警示：dyspnea + feeding difficulty + poor growth + profuse perspiration + recurrent pneumonia + early CHF"
+      ],
+      "treatment_add": [
+        "[共筆] 手術 indication：肺壓 > 體循環 1/2 / Qp/Qs > 2:1 / symptomatic CHF 控制不佳 / recurrent pneumonia"
+      ]
+    },
+    {
+      "id": "114-58",
+      "topic": "SDH / TBI (P1, 急)",
+      "kungbi_ref": "05_伍/04_腦部創傷.md",
+      "history_add": [
+        "[共筆] AMPLE 二次評估：Allergy / Medication / Past illness or Pregnancy / Last meal / Events (含 5 yr 內破傷風)",
+        "[共筆] CT brain indication：受傷後 2 hr GCS 未恢復到 15 / 疑 skull fracture (CSF rhinorrhea / Battle sign / raccoon eyes) / 嘔吐 ≥ 2 / age > 65 / antiplatelet+anticoag / focal sign"
+      ],
+      "treatment_add": [
+        "[共筆] Primary survey ABCDE：A airway + C-spine 保護 (GCS < 8 插管) / B breathing 排 tension PTX + hemothorax / C circulation IV ×2 大孔 / D disability GCS+pupil+focal / E exposure 防低體溫",
+        "[共筆] 抗凝逆轉：warfarin → vit K 5-10 mg IV + PCC 25-50 IU/kg；DOAC → idarucizumab (dabigatran) / andexanet (Xa inhibitor)",
+        "[共筆] FAST scan 4 區：pericardial / Morrison's pouch / perisplenic / suprapubic"
+      ]
+    },
+    {
+      "id": "114-04",
+      "topic": "痛風 (P2)",
+      "kungbi_ref": "02_貳/14_痛風.md",
+      "history_add": [
+        "[共筆] 1° (idiopathic / 飲食加重) vs 2° 高尿酸：CKD / thiazide / aspirin / cyclosporine / 酮酸 / 乳酸 / 子癲前症 / 鉛中毒",
+        "[共筆] 酒精雙重機轉：競爭排泄 + purine 高 (啤酒 > 烈酒)"
+      ],
+      "pe_add": [
+        "[共筆] Tophi 部位 ranked：helix (耳廓最典型) > olecranon > Achilles > MTP"
+      ],
+      "treatment_add": [
+        "[共筆] HLA-B*5801 漢人 / 韓人 / 泰人 allopurinol 前必篩 (SJS/TEN risk)；陽性改 febuxostat",
+        "[共筆] 降尿酸啟動：急性 fully resolve ≥ 2 週後；目標 uric acid < 6 (合併 tophi < 5)；同時 colchicine 0.6 mg/d × 6 月避免 mobilization flare",
+        "[共筆] Joint aspiration crystal：urate negatively birefringent needle-shape (vs CPPD positively birefringent rhomboid)"
+      ]
+    },
+    {
+      "id": "2025-02",
+      "topic": "SLE (P2)",
+      "kungbi_ref": "02_貳/16_SLE.md",
+      "history_add": [
+        "[共筆] 8 大抗體臨床意義：ANA (entry, sensitivity 高) / anti-dsDNA (活動度) / anti-Sm (specificity) / anti-Ro/SSA (新生兒 lupus + 先天 heart block) / anti-ribosomal P (CNS lupus) / anti-phospholipid (流產+APS 血栓) / anti-La / anti-histone (drug-induced)"
+      ],
+      "treatment_add": [
+        "[共筆] HCQ 200-400 mg/d 終身 — 懷孕安全 + 減 flare；副作用 retinal toxicity → 5 yr 後 q1y 眼底",
+        "[共筆] 懷孕計畫：穩定 ≥ 6 月再受孕；HCQ + azathioprine OK；禁 MMF / methotrexate / cyclophosphamide (致畸)",
+        "[共筆] anti-Ro+ → 給 dexamethasone if fetal heart block；APS+ → LMWH + low-dose aspirin"
+      ],
+      "redFlags_add": [
+        "[共筆] Jaccoud arthropathy：形變但可矯正、無 bone erosion (vs RA 不可逆)"
+      ]
+    },
+    {
+      "id": "2025-21",
+      "topic": "肝硬化 (P2)",
+      "kungbi_ref": "02_貳/04_肝硬化.md",
+      "history_add": [
+        "[共筆] 病因 workup：HBV/HCV serology / AST/ALT 比 / α-1 antitrypsin / ANA/ASMA/AMA / Fe/transferrin saturation > 45 → HFE gene / Cu+ceruloplasmin / 24 hr 尿銅"
+      ],
+      "pe_add": [
+        "[共筆] 門靜脈高壓 PE：spider angiomata / palmar erythema / caput medusae / splenomegaly / shifting dullness / fluid wave / gynecomastia / testicular atrophy / asterixis"
+      ],
+      "treatment_add": [
+        "[共筆] 非侵入肝硬化評分：Lok index (plt+AST+ALT+INR) < 0.2 排除 / > 0.5 高度懷疑；FibroScan / MR elastography 取代切片",
+        "[共筆] AVB bundle (食道靜脈出血)：octreotide drip + ceftriaxone 7d (降 SBP 死亡率) + PPI + 輸血保守 Hb 7-8 + EGD banding 12 hr 內 + secondary 預防 NSBB (propranolol/carvedilol) + banding 反覆直到 eradication",
+        "[共筆] Child-Pugh (5 項 A-B-C)：bili / albumin / PT(INR) / ascites / encephalopathy；MELD: bili + Cr + INR + Na → transplant priority"
+      ]
+    },
+    {
+      "id": "2025-03",
+      "topic": "膽囊炎 (P2)",
+      "kungbi_ref": "02_貳/03_膽囊炎.md",
+      "history_add": [
+        "[共筆] Calculous (90%) vs acalculous (10% — 缺血 / 敗血症 / TPN 重症 / DM / 創傷)",
+        "[共筆] 病原：常培養不出但典型 E. coli / Enterococcus / Klebsiella / Enterobacter"
+      ],
+      "treatment_add": [
+        "[共筆] Tokyo Guideline 嚴重度：Grade I (mild, 無器官 dysfunction) → 直接 lap chole；Grade II (WBC > 18000 / palpable mass / 發病 > 72 hr / 局部併發症) → 小心 CBD injury / 可 PTGBD bridge；Grade III (器官衰竭) → 先 PTGBD 引流，stable 後 delayed cholecystectomy",
+        "[共筆] 抗生素：cover GNB+anaerobe — 2nd/3rd ceph or FQ + metronidazole / pip-tazo；持續到 lap chole 後 24 hr 或臨床緩解；通常 7-10 d / bacteremia 14 d",
+        "[共筆] 老年 > 80 仍可早期 lap chole；緊急手術 absolute indication：gangrenous / perforation / emphysematous (DM 老人) / 抗生素無效持續高燒休克"
+      ]
+    },
+    {
+      "id": "2025-24",
+      "topic": "羊膜穿刺 (P2)",
+      "kungbi_ref": "03_參/02_羊膜穿刺.md",
+      "history_add": [
+        "[共筆] 7 大適應症：(1) 孕婦 ≥ 34 yr (健保) (2) 唐氏篩 risk > 1/270 (3) 過去染色體異常 / 不明死胎 (4) 父母染色體異常 / 遺傳病 carrier (5) 家族唐氏 / 染色體異常 (6) NT > 3 mm (30% aneuploidy) / US 異常 (7) 治療：羊水過多 / TTTS"
+      ],
+      "treatment_add": [
+        "[共筆] 技術：20/22 gauge × 9 cm 針，US 引導抽 20-30 mL (僅 8% 羊水量)；不需 local 麻醉 (不適感小)；時機 16-20 wk (羊水 ≥ 250 cc)",
+        "[共筆] 報告時程：FISH 2-3 d / full karyotype 2-3 wk / microarray 1-2 wk",
+        "[共筆] 術後 5 點：腹部短暫變硬 normal (< 4 次/hr) / 多休息 / 1 wk 禁性行為+劇運+旅行+提重 > 5kg / OK 繃當天可除 / Rh- 媽媽 72 hr 內 anti-D 300 µg"
+      ],
+      "redFlags_add": [
+        "[共筆] 流產 0.1-0.3% (千分之 1-3)；BMI > 40 ×2；早期破水 1-2%；chorioamnionitis < 0.1%；緊急回診：規則腹痛 / 陰道出血 / 水樣滲出 / 發燒"
+      ]
+    },
+    {
+      "id": "2025-16",
+      "topic": "兒急性腹瀉 (P2)",
+      "kungbi_ref": "04_肆/03_小兒腸胃炎.md",
+      "history_add": [
+        "[共筆] WHO 定義：≥ 3 次稀狀或水樣便 / d (嬰兒另定義)；分類 acute < 5d / chronic > 1 月",
+        "[共筆] 大便顏色暗示：油油 → 脂肪吸收 (膽道閉鎖 / CF / 胰管阻塞) / 血便+黏液 → 細菌性 / 紅醋栗便+陣發哭+腹塊 → 腸套疊 / 米湯水樣 → cholera",
+        "[共筆] TOCC：tropical/subtropical 旅遊 → 寄生蟲；動物園 → HUS；家人類似 → 食物中毒；托嬰 → rotavirus；最近抗生素 → C. diff"
+      ],
+      "treatment_add": [
+        "[共筆] EHEC O157 禁抗生素 (升 HUS 風險)；rotavirus 抗酒精 → 用 bleach 消毒",
+        "[共筆] 鋅補充：< 6m 10 mg/d × 6m / > 6m 20 mg/d × 10-14 d 縮短病程"
+      ],
+      "redFlags_add": [
+        "[共筆] 腸套疊 Dance sign (RUQ 空虛) + target sign on US → air enema 嘗試 → 失敗手術"
+      ]
+    }
+  ]
+}

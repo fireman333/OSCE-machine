@@ -1,6 +1,7 @@
 // OSCE 刷題機 — 題庫
-// 共 133 個 case：63 例 114 年 OSCE SP 劇情範例 + 40 例個人 OSCE 筆記衍生 + 30 例 2025 OSCE 考古題
-// 每個 case 拆成 3 張卡（history / pe / ddx）→ 共 399 張刷題卡
+// 共 177 個 case：63 例 114 年 OSCE SP 劇情範例 + 40 例個人 OSCE 筆記衍生 + 30 例 2025 OSCE 考古題
+//                + 35 例 add-tier-classification 補強 case（tier-01~35）+ 9 例 2025 共筆衍生 case（kungbi-01~09）
+// 每個 case 拆成 3 張卡（history / pe / ddx）→ 共 531 張刷題卡
 // 欄位：id, source, age, sex, chiefComplaint, department, system, vignette,
 //       history[], pe[], ddx[], explanation[], treatment[], redFlags[]
 // 內容依 osce-answer 框架重寫：history = LQQOPERA + 內外敏藥住個家；pe = IPPA + 特殊測試；
@@ -10,7 +11,7 @@
 window.OSCE_CASES = [
   {
     id: "114-01",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 25,
     sex: "F",
@@ -113,7 +114,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-03",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 38,
     sex: "F",
@@ -179,6 +180,9 @@ window.OSCE_CASES = [
       "全身症狀：發燒、寒顫、其他關節痛、皮疹",
       "內科病史：過去痛風發作史、tophi（痛風石）、HTN、DM、CKD、hyperuricemia",
       "個人史：飲酒量、職業、性接觸史（排除 gonococcal arthritis）、TB/STD"
+    ,
+      "[共筆] 1° (idiopathic / 飲食加重) vs 2° 高尿酸：CKD / thiazide / aspirin / cyclosporine / 酮酸 / 乳酸 / 子癲前症 / 鉛中毒",
+      "[共筆] 酒精雙重機轉：競爭排泄 + purine 高 (啤酒 > 烈酒)"
     ],
     pe: [
       "Vital signs（septic arthritis 會發燒、tachycardia）",
@@ -186,6 +190,8 @@ window.OSCE_CASES = [
       "其他關節掃描 + 耳廓/手指/阿基里斯腱 tophi",
       "Joint aspiration（arthrocentesis）送 cell count、Gram stain、culture、polarized microscopy",
       "皮膚 cellulitis 與全身淋巴結檢查（排除感染源）"
+    ,
+      "[共筆] Tophi 部位 ranked：helix (耳廓最典型) > olecranon > Achilles > MTP"
     ],
     ddx: [
       "Acute gouty arthritis（最可能）",
@@ -207,6 +213,10 @@ window.OSCE_CASES = [
       "若關節液懷疑 septic arthritis：立即 IV antibiotics（vancomycin 15-20 mg/kg q12h + ceftriaxone 2 g IV QD）+ 骨科會診考慮 drainage",
       "急性期過後 2-4 週開始 urate-lowering therapy：allopurinol 100 mg PO QD 起調，目標 SUA < 6 mg/dL；併用 colchicine 0.6 mg QD prophylaxis 3-6 個月",
       "衛教：limit purine（內臟、海鮮、紅肉）、戒啤酒、每日水分 > 2 L、減重、避免脫水與 thiazide diuretics、定期追蹤 SUA"
+    ,
+      "[共筆] HLA-B*5801 漢人 / 韓人 / 泰人 allopurinol 前必篩 (SJS/TEN risk)；陽性改 febuxostat",
+      "[共筆] 降尿酸啟動：急性 fully resolve ≥ 2 週後；目標 uric acid < 6 (合併 tophi < 5)；同時 colchicine 0.6 mg/d × 6 月避免 mobilization flare",
+      "[共筆] Joint aspiration crystal：urate negatively birefringent needle-shape (vs CPPD positively birefringent rhomboid)"
     ],
     redFlags: [
       "發燒 + 關節劇痛 → 立即 joint tap 排 septic arthritis",
@@ -216,7 +226,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-05",
-    tier: null,
+    tier: "P2",
     source: "114",
     age: 60,
     sex: "F",
@@ -268,7 +278,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-06",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 26,
     sex: "F",
@@ -334,6 +344,9 @@ window.OSCE_CASES = [
       "貧血症狀：頭暈、疲倦、爬樓梯喘、心悸、耳鳴、異食癖",
       "壓迫症狀：頻尿、排便不順、性交疼痛、腹脹",
       "婦科 / 個人史：生育史（GPA）、避孕、過去肌瘤或腺肌症診斷、家族婦癌史、出血傾向"
+    ,
+      "[共筆] PICA 詢問：吃冰塊 / 泥土 / 紙 (IDA 特徵)",
+      "[共筆] 月經量化：1 hr 換衛生棉 + 大血塊 → 月經過多 (menorrhagia)"
     ],
     pe: [
       "Vital signs（HR、orthostatic BP）+ pallor（conjunctiva、甲床）",
@@ -341,6 +354,8 @@ window.OSCE_CASES = [
       "Pelvic exam：子宮大小形狀活動度、附件腫塊、cervical motion tenderness",
       "Bedside：CBC（Hb）、urine pregnancy test、TVS 看內膜厚度與肌瘤",
       "皮膚 ecchymosis、點狀出血（排除 coagulopathy）"
+    ,
+      "[共筆] Glossitis (光滑舌)、koilonychia (湯匙指甲)、angular cheilitis、conjunctival pallor、palmar crease pallor"
     ],
     ddx: [
       "Uterine fibroid / leiomyoma",
@@ -363,16 +378,21 @@ window.OSCE_CASES = [
       "結構性問題：symptomatic fibroid → myomectomy 或 UAE（uterine artery embolization）；adenomyosis 完成生育 → hysterectomy",
       "貧血補充：ferrous sulfate 325 mg PO QD/BID ×3-6 個月，追蹤 Hb 與 ferritin",
       "衛教：月經量與日期記錄、症狀惡化（每小時衛生棉 > 1 片、暈厥）即就醫、定期追蹤 endometrial 評估"
+    ,
+      "[共筆] Mentzer index = MCV / RBC count：< 13 → 想 thalassemia (Hb 電泳)；> 13 → 想 IDA",
+      "[共筆] CHr (reticulocyte Hb content) 在 CKD / 發炎下不受 ferritin 干擾 — 早期偵測 functional iron deficiency"
     ],
     redFlags: [
       "Hb < 7 + active bleeding → 輸血 + 急診止血",
       "懷孕 + 大出血 → 排 abortion / molar"
+    ,
+      "[共筆] 新發 IDA 男性 / 停經後女性 → 必查大腸鏡排 GI 惡性"
     ]
   },
 
   {
     id: "114-08",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 10,
     sex: "F",
@@ -424,7 +444,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-09",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 1,
     sex: "M",
@@ -476,7 +496,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-10",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 46,
     sex: "F",
@@ -528,7 +548,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-11",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 55,
     sex: "F",
@@ -580,7 +600,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-12",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 50,
     sex: "M",
@@ -632,7 +652,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-13",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 48,
     sex: "M",
@@ -684,7 +704,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-14",
-    tier: null,
+    tier: "P2",
     source: "114",
     age: 65,
     sex: "M",
@@ -788,7 +808,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-16",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 53,
     sex: "F",
@@ -840,7 +860,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-17",
-    tier: null,
+    tier: "P2",
     source: "114",
     age: 55,
     sex: "M",
@@ -944,7 +964,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-19",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 28,
     sex: "F",
@@ -996,7 +1016,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-20",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 63,
     sex: "F",
@@ -1049,7 +1069,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-21",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 37,
     sex: "F",
@@ -1153,7 +1173,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-23",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 53,
     sex: "M",
@@ -1205,7 +1225,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-24",
-    tier: null,
+    tier: "P1",
     source: "114",
     age: 57,
     sex: "M",
@@ -1257,7 +1277,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-25",
-    tier: null,
+    tier: "P2",
     source: "114",
     age: 38,
     sex: "F",
@@ -1309,7 +1329,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-26",
-    tier: null,
+    tier: "P2",
     source: "114",
     age: 39,
     sex: "M",
@@ -1361,7 +1381,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-27",
-    tier: null,
+    tier: "P2",
     source: "114",
     age: 28,
     sex: "M",
@@ -1413,7 +1433,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-28",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 48,
     sex: "M",
@@ -1464,7 +1484,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-29",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 60,
     sex: "F",
@@ -1516,7 +1536,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-30",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 55,
     sex: "F",
@@ -1568,7 +1588,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-31",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 52,
     sex: "M",
@@ -1620,7 +1640,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-32",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 0,
     sex: "M",
@@ -1672,7 +1692,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-33",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 63,
     sex: "M",
@@ -1724,7 +1744,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-34",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 30,
     sex: "M",
@@ -1776,7 +1796,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-35",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 67,
     sex: "M",
@@ -1828,7 +1848,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-36",
-    tier: null,
+    tier: "P1",
     source: "114",
     age: 1,
     sex: "M",
@@ -1880,7 +1900,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-37",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 50,
     sex: "F",
@@ -1932,7 +1952,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-38",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 50,
     sex: "M",
@@ -1984,7 +2004,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-39",
-    tier: null,
+    tier: "P2",
     source: "114",
     age: 51,
     sex: "F",
@@ -2036,7 +2056,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-40",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 41,
     sex: "F",
@@ -2088,7 +2108,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-41",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 43,
     sex: "F",
@@ -2140,7 +2160,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-42",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 56,
     sex: "F",
@@ -2192,7 +2212,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-43",
-    tier: null,
+    tier: "P2",
     source: "114",
     age: 50,
     sex: "F",
@@ -2244,7 +2264,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-44",
-    tier: null,
+    tier: "P2",
     source: "114",
     age: 52,
     sex: "F",
@@ -2310,6 +2330,9 @@ window.OSCE_CASES = [
       "眼部：複視、眼凸、異物感、淚溢（thyroid eye disease 線索）",
       "頸部腫脹、吞嚥困難、聲音沙啞",
       "婦產科「性孕經分片」+ 家族：已停經 5-6 年、家族 thyroid disease、近期含碘食物或藥物（amiodarone）"
+    ,
+      "[共筆] T3 vs T4 dominance：T3-toxicosis 早期 Graves 或 toxic nodule (TT3 ↑ but FT4 normal) — 必驗 TT3 (FT3 檢測未廣泛驗證)",
+      "[共筆] 含碘來源：amiodarone (含碘 37%) / lithium / 含碘顯影劑 / 海帶紫菜過量"
     ],
     pe: [
       "Vital signs（注意 HR↑、systolic BP↑、脈壓增大）",
@@ -2339,16 +2362,22 @@ window.OSCE_CASES = [
       "確定治療：ATD 12-18 個月、RAI（radioactive iodine I-131）、subtotal thyroidectomy 三選一",
       "監測：每 4-6 週追 TSH/fT4、CBC（agranulocytosis）、LFT；眼科評估 thyroid eye disease",
       "衛教：戒咖啡因、避免過量碘（海帶、海藻）、戒菸（加重眼病變）、規律服藥勿自行停藥"
+    ,
+      "[共筆] Burch-Wartofsky thyroid storm score ≥ 45 → ICU；PTU 200 mg q4h + propranolol + hydrocortisone 100 mg + Lugol's iodide (PTU 後 ≥ 1 hr 給)",
+      "[共筆] 漢人 / 韓人 / 泰人 antithyroid drug 前查 HLA-B*5801 (agranulocytosis / SJS 風險)",
+      "[共筆] 孕婦 first trimester 用 PTU；其餘時期 methimazole；放射碘孕婦禁忌"
     ],
     redFlags: [
       "Thyroid storm（高燒 + 意識改變 + HF）→ ICU",
       "AF with rapid response → rate control"
+    ,
+      "[共筆] Thyroid storm: 高燒 > 39°C + 譫妄 + HR > 140 + HF + GI 症狀 → ICU + Burch-Wartofsky score"
     ]
   },
 
   {
     id: "114-46",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 50,
     sex: "F",
@@ -2414,6 +2443,9 @@ window.OSCE_CASES = [
       "誘發因子：外傷、劇烈用力、咳嗽、潛水、飛行、搭乘高速列車",
       "Risk factors：tall lean young male、smoker、Marfan syndrome、過去氣胸史、家族史",
       "內外敏藥住個家：排 PE（pulmonary embolism）risk（immobilization、長途、避孕藥、家族 DVT）、壓力大、疲倦"
+    ,
+      "[共筆] 5 大分類：Simple / Tension (單向閥) / Hydropneumothorax / Pneumothorax ex vacuo / Bilateral (buffalo chest / 嚴重肺病 PJP CF)",
+      "[共筆] 吸菸 dose-response：男 7-21-102× / 女 4-14-68×；輕 1-12 / 中 13-22 / 重 > 22 根/d"
     ],
     pe: [
       "Vital signs + SpO2 + 呼吸型態（tachypnea、accessory muscle use）",
@@ -2421,6 +2453,8 @@ window.OSCE_CASES = [
       "Tracheal deviation、JVP（jugular venous pressure）升高（tension 徵象）",
       "Subcutaneous emphysema、心音、下肢 DVT 評估",
       "Bedside：upright PA CXR、ECG、ABG（arterial blood gas）"
+    ,
+      "[共筆] Tension 症狀診斷不等 CXR：低 BP + HR↑ + 嚴重喘 + 氣管偏移 + JVP↑ → 立即 needle decompression 第 2 肋間鎖骨中線"
     ],
     ddx: [
       "Spontaneous pneumothorax（tall lean young male）",
@@ -2443,6 +2477,10 @@ window.OSCE_CASES = [
       "Large 或症狀明顯：chest tube thoracostomy（24-28 Fr，4-5th ICS midaxillary line），接 water seal 或 suction",
       "復發或 persistent air leak：VATS（video-assisted thoracoscopic surgery）+ bleb resection + pleurodesis",
       "衛教：戒菸、術後 1-2 週內避免飛行與潛水、暫緩劇烈運動、復發症狀立即就醫"
+    ,
+      "[共筆] Chest tube 位置：第 4-5 肋間中腋線 (safe triangle) → underwater seal",
+      "[共筆] 拔管：no air leak 24-48 hr + CXR 無 PTX → 夾管 4-12 hr → 重 CXR → 拔",
+      "[共筆] 手術 indication：first ipsilateral recurrence / 對側 PTX / persistent air leak > 5-7 d / hemothorax / bilateral / 高風險職業 → VATS bullectomy + pleurodesis"
     ],
     redFlags: [
       "Tension pneumothorax（HR↑ BP↓ JVP↑ tracheal shift）→ 立即 needle decompression",
@@ -2452,7 +2490,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-48",
-    tier: null,
+    tier: "P1",
     source: "114",
     age: 55,
     sex: "F",
@@ -2504,7 +2542,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-49",
-    tier: null,
+    tier: "P2",
     source: "114",
     age: 0,
     sex: "M",
@@ -2556,7 +2594,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-50",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 6,
     sex: "M",
@@ -2608,7 +2646,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-51",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 45,
     sex: "F",
@@ -2660,7 +2698,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-52",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 46,
     sex: "F",
@@ -2712,7 +2750,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-53",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 33,
     sex: "F",
@@ -2764,7 +2802,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-54",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 67,
     sex: "M",
@@ -2816,7 +2854,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-55",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 37,
     sex: "F",
@@ -2882,6 +2920,9 @@ window.OSCE_CASES = [
       "老年 ADL + 意識改變：baseline mental status、嗜睡出現時點、家屬觀察",
       "DM 控制：近期 BG、HbA1c、用藥 adherence、多飲多尿（排 HHS/DKA）",
       "內外敏藥住家：尿管、腎結石、過去 UTI、抗生素使用史"
+    ,
+      "[共筆] 5 I 誘因：Infection / Insulin missing / Infarction / Inflammation / Iatrogenic (steroids / SGLT2i)",
+      "[共筆] euDKA 警示：SGLT2i 用藥 + 急性病 / 手術 → BG 可正常 < 200 但仍 ketosis + acidosis"
     ],
     pe: [
       "Vital signs + qSOFA（SBP ≤ 100、RR ≥ 22、GCS < 15）+ dehydration signs",
@@ -2889,6 +2930,8 @@ window.OSCE_CASES = [
       "心肺：crackles、murmur（排 endocarditis）；腹部：guarding",
       "神經學：GCS、focal deficit（排 stroke）、meningeal signs",
       "Bedside：POCT glucose、ketone、ABG、ECG、lactate、urine + blood culture × 2"
+    ,
+      "[共筆] Kussmaul 深快呼吸 + 爛蘋果味 (acetone breath) + DKA pseudoperitonitis (腹痛但腹軟)"
     ],
     ddx: [
       "Urosepsis with septic shock（最可能）",
@@ -2911,6 +2954,10 @@ window.OSCE_CASES = [
       "若 MAP（mean arterial pressure）< 65 mmHg 經 fluid 仍低：norepinephrine titrate to MAP ≥ 65",
       "DM 處理：BG > 250 mg/dL 加 insulin drip；查 ketone 與 osmolality 區分 DKA/HHS",
       "ICU 監測 urine output、lactate clearance、源頭控制（移除 Foley、引流 abscess）；衛教家屬病情嚴重度"
+    ,
+      "[共筆] K 補充原則：K < 3.3 先補 K 才給 insulin / K 3.3-5.2 insulin + 20-30 mEq/L K / K > 5.2 暫不補",
+      "[共筆] Insulin protocol：0.1 U/kg/hr drip 直到 anion gap closed；BG < 200 切換 D5 並 overlap SC insulin 1-2 hr 再停 drip 避免 rebound DKA",
+      "[共筆] DKA vs HHS：HHS BG > 600 + osm > 320 + 微 ketone + 神經學顯著 + mortality 10-20% (vs DKA 1-5%)"
     ],
     redFlags: [
       "qSOFA ≥ 2 → ICU + 1 hr bundle",
@@ -2920,7 +2967,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-57",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 53,
     sex: "M",
@@ -2987,6 +3034,9 @@ window.OSCE_CASES = [
       "暴露：飲食（生水、海鮮 shellfish）、動物、性行為、蚊蟲叮咬、淡水接觸（leptospirosis）",
       "局部症狀：URI、GI（腹瀉血便）、UTI、皮膚 rash/eschar、淋巴結腫大、黃疸",
       "內外敏藥住家：疫苗史（HAV、typhoid、Japanese encephalitis）、malaria chemoprophylaxis、家人症狀"
+    ,
+      "[共筆] AMPLE 二次評估：Allergy / Medication / Past illness or Pregnancy / Last meal / Events (含 5 yr 內破傷風)",
+      "[共筆] CT brain indication：受傷後 2 hr GCS 未恢復到 15 / 疑 skull fracture (CSF rhinorrhea / Battle sign / raccoon eyes) / 嘔吐 ≥ 2 / age > 65 / antiplatelet+anticoag / focal sign"
     ],
     pe: [
       "Vital signs + 體溫 pattern（cyclic → malaria、step-ladder → typhoid）",
@@ -3016,6 +3066,10 @@ window.OSCE_CASES = [
       "Typhoid：ceftriaxone 2 g IV QD × 7-14 天 或 azithromycin 1 g PO QD × 5 天",
       "Dengue：支持性治療、IV crystalloid titrate to HCT 與尿量、avoid NSAID/aspirin、監測 platelet 與 HCT",
       "衛教：疾管署通報法定傳染病、下次赴疫區接種 HAV/typhoid 疫苗、malaria chemoprophylaxis、防蚊措施、避免生水生食"
+    ,
+      "[共筆] Primary survey ABCDE：A airway + C-spine 保護 (GCS < 8 插管) / B breathing 排 tension PTX + hemothorax / C circulation IV ×2 大孔 / D disability GCS+pupil+focal / E exposure 防低體溫",
+      "[共筆] 抗凝逆轉：warfarin → vit K 5-10 mg IV + PCC 25-50 IU/kg；DOAC → idarucizumab (dabigatran) / andexanet (Xa inhibitor)",
+      "[共筆] FAST scan 4 區：pericardial / Morrison's pouch / perisplenic / suprapubic"
     ],
     redFlags: [
       "Cyclic fever + 黃疸 + splenomegaly → malaria smear",
@@ -3025,7 +3079,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-59",
-    tier: null,
+    tier: "P2",
     source: "114",
     age: 0,
     sex: "F",
@@ -3077,7 +3131,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-60",
-    tier: null,
+    tier: "P1",
     source: "114",
     age: 58,
     sex: "M",
@@ -3129,7 +3183,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-61",
-    tier: null,
+    tier: "P2",
     source: "114",
     age: 57,
     sex: "M",
@@ -3181,7 +3235,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-62",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 16,
     sex: "F",
@@ -3233,7 +3287,7 @@ window.OSCE_CASES = [
 
   {
     id: "114-63",
-    tier: null,
+    tier: "P3",
     source: "114",
     age: 35,
     sex: "M",
@@ -3285,7 +3339,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-01",
-    tier: null,
+    tier: "P1",
     source: "remnote",
     age: 65,
     sex: "M",
@@ -3389,7 +3443,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-03",
-    tier: null,
+    tier: "P3",
     source: "remnote",
     age: 70,
     sex: "M",
@@ -3441,7 +3495,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-04",
-    tier: null,
+    tier: "P2",
     source: "remnote",
     age: 28,
     sex: "F",
@@ -3493,7 +3547,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-05",
-    tier: null,
+    tier: "P3",
     source: "remnote",
     age: 50,
     sex: "F",
@@ -3545,7 +3599,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-06",
-    tier: null,
+    tier: "P3",
     source: "remnote",
     age: 35,
     sex: "F",
@@ -3649,7 +3703,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-08",
-    tier: null,
+    tier: "P1",
     source: "remnote",
     age: 55,
     sex: "F",
@@ -3753,7 +3807,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-10",
-    tier: null,
+    tier: "P2",
     source: "remnote",
     age: 55,
     sex: "M",
@@ -3805,7 +3859,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-11",
-    tier: null,
+    tier: "P3",
     source: "remnote",
     age: 45,
     sex: "F",
@@ -3871,6 +3925,9 @@ window.OSCE_CASES = [
       "神經學症狀：下肢肌力、麻木範圍、步態不穩、夜間痛",
       "Red flags（馬尾症候群）：saddle anesthesia、bowel/bladder incontinence、雙側下肢無力",
       "內外敏藥：癌症史、TB 史、免疫抑制、IV drug、體重減輕、發燒（排 malignancy / infection）"
+    ,
+      "[共筆] 90%+ HIVD 在 L4-5 / L5-S1 (後縱韌帶在 L4-5 處外側較薄)",
+      "[共筆] 紅旗區別：cancer 骨轉 (乳/肺/攝護腺/甲狀/腎細) / multiple myeloma / spinal epidural abscess (背痛+發燒+神經缺損) / AS (晨僵+uveitis+夜痛+家族)"
     ],
     pe: [
       "Vital signs + 脊椎視觸診：tenderness、muscle spasm、step-off、ROM（range of motion）",
@@ -3878,6 +3935,10 @@ window.OSCE_CASES = [
       "Motor：L5 dorsiflexion、EHL；S1 plantarflexion；對側 SLR（crossed SLR，specificity 高）",
       "Sensation 依 dermatome 檢查 + DTR（膝 L4、踝 S1）+ saddle sensation + perianal tone",
       "Bedside：無紅旗症狀不急於 imaging，> 6 週或神經學惡化 → MRI lumbar spine"
+    ,
+      "[共筆] L3-L4 (L4 root)：大腿前 / 膝 extension / 內踝 / 膝跳反射",
+      "[共筆] L4-L5 (L5 root)：下肢後 / 拇趾上抬 + 脛前肌 / 大腳趾 web / (無反射對應)",
+      "[共筆] L5-S1 (S1 root)：下肢後 + 腳踝 / 踮腳 / 足部外側 / 跟腱反射"
     ],
     ddx: [
       "Lumbar disc herniation（HIVD，L4-5 / L5-S1 most common）",
@@ -3900,6 +3961,8 @@ window.OSCE_CASES = [
       "Neuropathic pain：gabapentin（Neurontin）300 mg PO TID titrate 或 pregabalin（Lyrica）75 mg PO BID",
       "復健：避免久坐久站、physical therapy、core muscle training、正確搬重姿勢",
       "手術 indication：cauda equina（48 hr 內急 decompression）、進行性 motor 缺損、保守 6-12 週無效"
+    ,
+      "[共筆] Cauda equina (鞍區麻 + 大小便失禁 + 雙下肢無力) → 緊急 MRI + 神經外科會診 / decompression < 48 hr"
     ],
     redFlags: [
       "Cauda equina（saddle + bowel/bladder）→ 急 MRI + decompression < 48 hr",
@@ -3909,7 +3972,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-13",
-    tier: null,
+    tier: "P2",
     source: "remnote",
     age: 70,
     sex: "F",
@@ -3961,7 +4024,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-14",
-    tier: null,
+    tier: "P2",
     source: "remnote",
     age: 60,
     sex: "M",
@@ -4013,7 +4076,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-15",
-    tier: null,
+    tier: "P3",
     source: "remnote",
     age: 50,
     sex: "M",
@@ -4065,7 +4128,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-16",
-    tier: null,
+    tier: "P3",
     source: "remnote",
     age: 60,
     sex: "M",
@@ -4117,7 +4180,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-17",
-    tier: null,
+    tier: "P3",
     source: "remnote",
     age: 55,
     sex: "F",
@@ -4169,7 +4232,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-18",
-    tier: null,
+    tier: "P3",
     source: "remnote",
     age: 65,
     sex: "F",
@@ -4221,7 +4284,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-19",
-    tier: null,
+    tier: "P3",
     source: "remnote",
     age: 70,
     sex: "M",
@@ -4273,7 +4336,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-20",
-    tier: null,
+    tier: "P3",
     source: "remnote",
     age: 50,
     sex: "F",
@@ -4325,7 +4388,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-21",
-    tier: null,
+    tier: "P3",
     source: "remnote",
     age: 60,
     sex: "M",
@@ -4481,7 +4544,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-24",
-    tier: null,
+    tier: "P3",
     source: "remnote",
     age: 3,
     sex: "F",
@@ -4533,7 +4596,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-25",
-    tier: null,
+    tier: "P3",
     source: "remnote",
     age: 0,
     sex: "M",
@@ -4585,7 +4648,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-26",
-    tier: null,
+    tier: "P3",
     source: "remnote",
     age: 0,
     sex: "M",
@@ -4637,7 +4700,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-27",
-    tier: null,
+    tier: "P3",
     source: "remnote",
     age: 1,
     sex: "M",
@@ -4689,7 +4752,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-28",
-    tier: null,
+    tier: "P3",
     source: "remnote",
     age: 30,
     sex: "F",
@@ -4741,7 +4804,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-29",
-    tier: null,
+    tier: "P2",
     source: "remnote",
     age: 25,
     sex: "F",
@@ -4793,7 +4856,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-30",
-    tier: null,
+    tier: "P3",
     source: "remnote",
     age: 32,
     sex: "F",
@@ -4845,7 +4908,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-31",
-    tier: null,
+    tier: "P3",
     source: "remnote",
     age: 28,
     sex: "F",
@@ -4898,7 +4961,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-32",
-    tier: null,
+    tier: "P3",
     source: "remnote",
     age: 35,
     sex: "F",
@@ -4951,7 +5014,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-33",
-    tier: null,
+    tier: "P3",
     source: "remnote",
     age: 26,
     sex: "F",
@@ -5003,7 +5066,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-34",
-    tier: null,
+    tier: "P2",
     source: "remnote",
     age: 30,
     sex: "F",
@@ -5056,7 +5119,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-35",
-    tier: null,
+    tier: "P2",
     source: "remnote",
     age: 32,
     sex: "F",
@@ -5108,7 +5171,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-36",
-    tier: null,
+    tier: "P2",
     source: "remnote",
     age: 25,
     sex: "M",
@@ -5161,7 +5224,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-37",
-    tier: null,
+    tier: "P2",
     source: "remnote",
     age: 70,
     sex: "M",
@@ -5213,7 +5276,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-38",
-    tier: null,
+    tier: "P3",
     source: "remnote",
     age: 65,
     sex: "M",
@@ -5265,7 +5328,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-39",
-    tier: null,
+    tier: "P2",
     source: "remnote",
     age: 50,
     sex: "M",
@@ -5317,7 +5380,7 @@ window.OSCE_CASES = [
 
   {
     id: "RM-40",
-    tier: null,
+    tier: "P3",
     source: "remnote",
     age: 65,
     sex: "M",
@@ -5369,7 +5432,7 @@ window.OSCE_CASES = [
 
   {
     id: "2025-01",
-    tier: null,
+    tier: "P3",
     source: "2025",
     age: 55,
     sex: "M",
@@ -5436,6 +5499,8 @@ window.OSCE_CASES = [
       "Disease activity：皮疹、關節痛、口腔潰瘍、脫髮、雷諾氏現象、發燒",
       "腎臟侵犯：泡尿、水腫、夜尿、BP、過去 UA 與 Cr 數值",
       "抗體：anti-Ro/La、anti-dsDNA、anti-phospholipid Ab、過去流產史、血栓史"
+    ,
+      "[共筆] 8 大抗體臨床意義：ANA (entry, sensitivity 高) / anti-dsDNA (活動度) / anti-Sm (specificity) / anti-Ro/SSA (新生兒 lupus + 先天 heart block) / anti-ribosomal P (CNS lupus) / anti-phospholipid (流產+APS 血栓) / anti-La / anti-histone (drug-induced)"
     ],
     pe: [
       "Vital signs：BP（preeclampsia 與 lupus nephritis 風險）",
@@ -5466,10 +5531,16 @@ window.OSCE_CASES = [
       "產檢：高危妊娠門診 + 風免共照；每月追蹤 BP、UA、anti-dsDNA、C3/C4；anti-Ro (+) → 胎兒心臟超音波 16-26 wk",
       "生活：嚴格防曬 SPF ≥ 50 + 帽子、規律作息、避過勞、戒菸、低鹽（若 HTN）、均衡飲食",
       "衛教：flare 警訊（皮疹、關節痛、發燒、蛋白尿、頭痛）立即回診；active nephritis 需先控制再懷孕"
+    ,
+      "[共筆] HCQ 200-400 mg/d 終身 — 懷孕安全 + 減 flare；副作用 retinal toxicity → 5 yr 後 q1y 眼底",
+      "[共筆] 懷孕計畫：穩定 ≥ 6 月再受孕；HCQ + azathioprine OK；禁 MMF / methotrexate / cyclophosphamide (致畸)",
+      "[共筆] anti-Ro+ → 給 dexamethasone if fetal heart block；APS+ → LMWH + low-dose aspirin"
     ],
     redFlags: [
       "Active lupus nephritis → 懷孕禁忌，需先控制",
       "APS + 反覆流產 → aspirin + LMWH 預防"
+    ,
+      "[共筆] Jaccoud arthropathy：形變但可矯正、無 bone erosion (vs RA 不可逆)"
     ]
   },
 
@@ -5489,6 +5560,9 @@ window.OSCE_CASES = [
       "抗凝血藥：aspirin、clopidogrel、warfarin、DOAC；出血傾向與家族出血病史",
       "內外敏藥住個家：DM、HTN、過去腹部手術（影響 port 位置）、懷孕可能",
       "禁食狀態：最後一次飲食時間、目前症狀（發燒、黃疸、嘔吐）"
+    ,
+      "[共筆] Calculous (90%) vs acalculous (10% — 缺血 / 敗血症 / TPN 重症 / DM / 創傷)",
+      "[共筆] 病原：常培養不出但典型 E. coli / Enterococcus / Klebsiella / Enterobacter"
     ],
     pe: [
       "Vital signs：fever、HR、BP、SpO2；體溫若 > 38.5°C 疑 cholangitis",
@@ -5519,6 +5593,10 @@ window.OSCE_CASES = [
       "風險告知：bleeding、bile leak、bile duct injury（< 0.5%）、conversion to open（< 5%）、surgical site infection",
       "替代方案：PTGBD（percutaneous transhepatic gallbladder drainage）+ IV antibiotics 僅適高麻醉風險者，易復發仍建議日後手術",
       "衛教：術後 1 個月低脂飲食、傷口紅腫流膿或發燒立即回診、1-2 週門診拆線與病理追蹤"
+    ,
+      "[共筆] Tokyo Guideline 嚴重度：Grade I (mild, 無器官 dysfunction) → 直接 lap chole；Grade II (WBC > 18000 / palpable mass / 發病 > 72 hr / 局部併發症) → 小心 CBD injury / 可 PTGBD bridge；Grade III (器官衰竭) → 先 PTGBD 引流，stable 後 delayed cholecystectomy",
+      "[共筆] 抗生素：cover GNB+anaerobe — 2nd/3rd ceph or FQ + metronidazole / pip-tazo；持續到 lap chole 後 24 hr 或臨床緩解；通常 7-10 d / bacteremia 14 d",
+      "[共筆] 老年 > 80 仍可早期 lap chole；緊急手術 absolute indication：gangrenous / perforation / emphysematous (DM 老人) / 抗生素無效持續高燒休克"
     ],
     redFlags: [
       "術中發現 anatomy 不清 → 改 open（避免 BDI）",
@@ -5542,6 +5620,10 @@ window.OSCE_CASES = [
       "發燒時程：何時開始、最高溫、退燒效果、感染源（耳鼻喉、尿路、腸胃）",
       "過去發作史、家族 febrile seizure（熱痙攣）或 epilepsy（癲癇）史",
       "neurodevelopment（神經發展）里程碑是否正常、近期接觸史與疫苗史"
+    ,
+      "[共筆] Simple FS (75%)：6m-6y、< 15 min、generalized、24 hr 內 1 次、退燒後 EEG 10d 恢復、預後良好",
+      "[共筆] Complex FS (25%)：< 6m or > 6y / > 15 min / focal / 24 hr 內 ≥ 2 次 / EEG 不正常 / 變癲癇 risk 略升 (4-6%)",
+      "[共筆] 必排腦膜炎：頸僵 + Kernig + Brudzinski + bulging fontanelle"
     ],
     pe: [
       "Vital signs 含體溫、意識（AVPU）、活力評估",
@@ -5572,6 +5654,9 @@ window.OSCE_CASES = [
       "送醫時機：抽搐 > 5 分鐘、focal、24 hr 內反覆、意識久不清、< 6 個月或 > 5 歲、首次發作",
       "長期不需預防性 antiepileptic drug（AED，抗癲癇藥）；感染時積極退燒可減不適但無法完全預防",
       "衛教：家長辨識抽搐型態、紅旗警訊（postictal > 1 hr、complex seizure）立即回診"
+    ,
+      "[共筆] Status (FS > 30 min) = 熱性重積型癲癇 → 急救 lorazepam IV / midazolam buccal",
+      "[共筆] 退燒藥 (acetaminophen / ibuprofen) **不能預防 FS** — 只降不適"
     ],
     redFlags: [
       "Complex febrile seizure（> 15 min、focal、24 hr 內反覆）→ 須 work up",
@@ -5581,7 +5666,7 @@ window.OSCE_CASES = [
 
   {
     id: "2025-05",
-    tier: null,
+    tier: "P2",
     source: "2025",
     age: 38,
     sex: "F",
@@ -5633,7 +5718,7 @@ window.OSCE_CASES = [
 
   {
     id: "2025-06",
-    tier: null,
+    tier: "P1",
     source: "2025",
     age: 70,
     sex: "F",
@@ -5792,7 +5877,7 @@ window.OSCE_CASES = [
 
   {
     id: "2025-09",
-    tier: null,
+    tier: "P2",
     source: "2025",
     age: 50,
     sex: "M",
@@ -5844,7 +5929,7 @@ window.OSCE_CASES = [
 
   {
     id: "2025-10",
-    tier: null,
+    tier: "P3",
     source: "2025",
     age: 4,
     sex: "M",
@@ -5954,7 +6039,7 @@ window.OSCE_CASES = [
 
   {
     id: "2025-12",
-    tier: null,
+    tier: "P3",
     source: "2025",
     age: 30,
     sex: "F",
@@ -6009,7 +6094,7 @@ window.OSCE_CASES = [
 
   {
     id: "2025-13",
-    tier: null,
+    tier: "P3",
     source: "2025",
     age: 60,
     sex: "M",
@@ -6184,6 +6269,10 @@ window.OSCE_CASES = [
       "吃喝拉動睡：進食量、尿布次數（評估脫水）、活力、意識、睡眠",
       "接觸 / 飲食史：托兒所、家人類似症狀、生食、餐廳、寵物、旅遊",
       "疫苗史（rotavirus、其他例行）、疫苗時程、過去類似病史"
+    ,
+      "[共筆] WHO 定義：≥ 3 次稀狀或水樣便 / d (嬰兒另定義)；分類 acute < 5d / chronic > 1 月",
+      "[共筆] 大便顏色暗示：油油 → 脂肪吸收 (膽道閉鎖 / CF / 胰管阻塞) / 血便+黏液 → 細菌性 / 紅醋栗便+陣發哭+腹塊 → 腸套疊 / 米湯水樣 → cholera",
+      "[共筆] TOCC：tropical/subtropical 旅遊 → 寄生蟲；動物園 → HUS；家人類似 → 食物中毒；托嬰 → rotavirus；最近抗生素 → C. diff"
     ],
     pe: [
       "Vital signs（體溫、HR、BP、capillary refill、體重比對）",
@@ -6214,16 +6303,21 @@ window.OSCE_CASES = [
       "Antibiotics：Shigella / 嚴重 Salmonella 用 azithromycin 10 mg/kg qd 或 ceftriaxone；EHEC 禁用 Abx 避免誘發 HUS",
       "止瀉藥：兒童避免 loperamide（減緩腸蠕動增加毒素吸收風險）",
       "衛教：勤洗手、食物煮熟、避生水、警訊（無尿、嗜睡、蒼白少尿可能 HUS）立即返診"
+    ,
+      "[共筆] EHEC O157 禁抗生素 (升 HUS 風險)；rotavirus 抗酒精 → 用 bleach 消毒",
+      "[共筆] 鋅補充：< 6m 10 mg/d × 6m / > 6m 20 mg/d × 10-14 d 縮短病程"
     ],
     redFlags: [
       "重度脫水 + 嗜睡 + 低血壓 → 急救 IV fluid",
       "EHEC + 急性腎損傷 + 溶血 + 血小板低 → HUS"
+    ,
+      "[共筆] 腸套疊 Dance sign (RUQ 空虛) + target sign on US → air enema 嘗試 → 失敗手術"
     ]
   },
 
   {
     id: "2025-17",
-    tier: null,
+    tier: "P3",
     source: "2025",
     age: 45,
     sex: "F",
@@ -6447,6 +6541,8 @@ window.OSCE_CASES = [
       "Alarm symptoms：體重減輕、黑便、吞嚥困難、持續嘔吐、貧血症狀",
       "膽囊切除史：手術時間、原因、術後是否類似症狀（post-cholecystectomy syndrome）",
       "內外敏藥住個家：NSAID / aspirin / steroid、酒精咖啡、抽菸、壓力、家族 PUD / pancreatic / gastric cancer 史"
+    ,
+      "[共筆] 病因 workup：HBV/HCV serology / AST/ALT 比 / α-1 antitrypsin / ANA/ASMA/AMA / Fe/transferrin saturation > 45 → HFE gene / Cu+ceruloplasmin / 24 hr 尿銅"
     ],
     pe: [
       "Vital signs（warm shock？pallor？）",
@@ -6454,6 +6550,8 @@ window.OSCE_CASES = [
       "皮膚 / 黏膜：jaundice、conjunctival pallor（慢性失血）",
       "Per rectal exam：tarry stool（UGI bleeding 篩檢）",
       "Bedside workup：accucheck、ECG（atypical MI 疼痛轉移排除）"
+    ,
+      "[共筆] 門靜脈高壓 PE：spider angiomata / palmar erythema / caput medusae / splenomegaly / shifting dullness / fluid wave / gynecomastia / testicular atrophy / asterixis"
     ],
     ddx: [
       "Peptic ulcer disease（胃 / 十二指腸潰瘍）",
@@ -6479,6 +6577,10 @@ window.OSCE_CASES = [
       "Chronic pancreatitis：戒酒、低脂飲食、pancreatic enzyme replacement、止痛、控制 DM",
       "Sphincter of Oddi dysfunction：smooth muscle relaxant、ERCP + sphincterotomy（嚴重型）",
       "衛教：規律飲食、避辛辣油膩、戒菸戒酒、減壓；出現黑便 / 體重減輕 / 吞嚥困難立即就醫"
+    ,
+      "[共筆] 非侵入肝硬化評分：Lok index (plt+AST+ALT+INR) < 0.2 排除 / > 0.5 高度懷疑；FibroScan / MR elastography 取代切片",
+      "[共筆] AVB bundle (食道靜脈出血)：octreotide drip + ceftriaxone 7d (降 SBP 死亡率) + PPI + 輸血保守 Hb 7-8 + EGD banding 12 hr 內 + secondary 預防 NSBB (propranolol/carvedilol) + banding 反覆直到 eradication",
+      "[共筆] Child-Pugh (5 項 A-B-C)：bili / albumin / PT(INR) / ascites / encephalopathy；MELD: bili + Cr + INR + Na → transplant priority"
     ],
     redFlags: [
       "黑便 + 暈眩 → UGI bleeding 急救",
@@ -6488,7 +6590,7 @@ window.OSCE_CASES = [
 
   {
     id: "2025-22",
-    tier: null,
+    tier: "P3",
     source: "2025",
     age: 50,
     sex: "F",
@@ -6608,6 +6710,8 @@ window.OSCE_CASES = [
       "高風險指標：AMA（advanced maternal age ≥ 34）、染色體異常家族史、前胎異常",
       "內外敏藥：藥物、過敏、Rh 血型、出血傾向、感染史（HBV、HIV、梅毒）",
       "心理準備：夫妻對結果的接受度、若陽性的後續決定"
+    ,
+      "[共筆] 7 大適應症：(1) 孕婦 ≥ 34 yr (健保) (2) 唐氏篩 risk > 1/270 (3) 過去染色體異常 / 不明死胎 (4) 父母染色體異常 / 遺傳病 carrier (5) 家族唐氏 / 染色體異常 (6) NT > 3 mm (30% aneuploidy) / US 異常 (7) 治療：羊水過多 / TTTS"
     ],
     pe: [
       "Vital signs、體重",
@@ -6639,16 +6743,22 @@ window.OSCE_CASES = [
       "報告時間：FISH（aneuploidy 快篩）3-7 d、karyotype 2-3 wk、CMA 2 wk",
       "風險：流產 0.1-0.3%、感染、羊水滲漏、出血、Rh 致敏、針傷胎兒（極罕見）",
       "衛教：替代方案（NIPT、CVS、不做）；警訊（出血、腹痛、發燒、流羊水、規則宮縮）立即回診"
+    ,
+      "[共筆] 技術：20/22 gauge × 9 cm 針，US 引導抽 20-30 mL (僅 8% 羊水量)；不需 local 麻醉 (不適感小)；時機 16-20 wk (羊水 ≥ 250 cc)",
+      "[共筆] 報告時程：FISH 2-3 d / full karyotype 2-3 wk / microarray 1-2 wk",
+      "[共筆] 術後 5 點：腹部短暫變硬 normal (< 4 次/hr) / 多休息 / 1 wk 禁性行為+劇運+旅行+提重 > 5kg / OK 繃當天可除 / Rh- 媽媽 72 hr 內 anti-D 300 µg"
     ],
     redFlags: [
       "術後持續腹痛 + 發燒 → chorioamnionitis",
       "羊水滲漏 + 出血 → PPROM"
+    ,
+      "[共筆] 流產 0.1-0.3% (千分之 1-3)；BMI > 40 ×2；早期破水 1-2%；chorioamnionitis < 0.1%；緊急回診：規則腹痛 / 陰道出血 / 水樣滲出 / 發燒"
     ]
   },
 
   {
     id: "2025-25",
-    tier: null,
+    tier: "P2",
     source: "2025",
     age: 65,
     sex: "M",
@@ -6703,7 +6813,7 @@ window.OSCE_CASES = [
 
   {
     id: "2025-26",
-    tier: null,
+    tier: "P3",
     source: "2025",
     age: 60,
     sex: "F",
@@ -6755,7 +6865,7 @@ window.OSCE_CASES = [
 
   {
     id: "2025-27",
-    tier: null,
+    tier: "P3",
     source: "2025",
     age: 60,
     sex: "F",
@@ -6810,7 +6920,7 @@ window.OSCE_CASES = [
 
   {
     id: "2025-28",
-    tier: null,
+    tier: "P3",
     source: "2025",
     age: 32,
     sex: "F",
@@ -6879,6 +6989,9 @@ window.OSCE_CASES = [
       "呼吸：tachypnea、retraction、cyanosis（VSD 通常 acyanotic）、URI 頻率",
       "動睡：活力、睡眠量、是否易疲倦",
       "目前用藥：furosemide、digoxin 劑量與反應；家族先天性心臟病史、父母焦慮自責程度"
+    ,
+      "[共筆] VSD 解剖三分：Subarterial (易致 AR) / Perimembranous (最常見 70%) / Muscular (最易自閉)",
+      "[共筆] 大小分類：小 (< 5 mm, Roger 病) 自閉觀察 / 中 (5-15 mm) 心衰藥物 / 大 (> 15 mm or > AV 半徑) 必手術修補避 Eisenmenger"
     ],
     pe: [
       "Vital signs（HR、RR、SpO2、體重 percentile、身長）",
@@ -6886,6 +6999,9 @@ window.OSCE_CASES = [
       "心臟 IPPA：S1S2、loud P2（肺高壓）、harsh holosystolic murmur（LLSB）± thrill、diastolic rumble（large shunt）",
       "腹部：hepatomegaly（右心衰表徵）、下肢水腫（嬰兒罕見）",
       "Bedside：echocardiogram 確認 VSD size、shunt 方向、PA 壓力"
+    ,
+      "[共筆] Murmur 矛盾原則：小洞 high gradient → murmur 反而響；大洞 / Eisenmenger → murmur 變柔",
+      "[共筆] 中大型警示：dyspnea + feeding difficulty + poor growth + profuse perspiration + recurrent pneumonia + early CHF"
     ],
     ddx: [
       "VSD 病解：左右心室之間缺損 → 左→右分流 → 肺循環過多 → 左心 overload → 左心衰",
@@ -6911,6 +7027,8 @@ window.OSCE_CASES = [
       "手術 indication：CHF 對藥物無效、failure to thrive、進展性肺高壓、6-12 個月大仍 large shunt → surgical closure 或 transcatheter device closure",
       "感染預防：IE prophylaxis（術後 6 個月內 + 高風險 dental procedure）、疫苗齊全（含 RSV palivizumab）、避免人多場所",
       "家長支持：強調非父母過錯、可治療、預後好；警訊（呼吸急促、發紺、嗜睡、餵食差）立即回診"
+    ,
+      "[共筆] 手術 indication：肺壓 > 體循環 1/2 / Qp/Qs > 2:1 / symptomatic CHF 控制不佳 / recurrent pneumonia"
     ],
     redFlags: [
       "新生兒哭時 cyanosis 加劇 + reverse shunt → Eisenmenger 不可逆 → 已錯過手術時機",
@@ -6920,7 +7038,7 @@ window.OSCE_CASES = [
 
   {
     id: "2025-30",
-    tier: null,
+    tier: "P3",
     source: "2025",
     age: 28,
     sex: "F",
@@ -8643,6 +8761,488 @@ window.OSCE_CASES = [
       "Comorbid major depression / GAD / agoraphobia / PTSD",
       "Suicide risk（panic disorder + comorbidity 增 risk）",
       "Substance use disorder 篩"
+    ],
+  },
+  {
+    id: "kungbi-01",
+    source: "kungbi",
+    tier: "P2",
+    age: 35,
+    sex: "F",
+    department: "內",
+    system: "神經",
+    chiefComplaint: "突發雷擊樣頭痛 + 噁心嘔吐 + 頸僵硬",
+    vignette: "35 歲女性，1 hr 前突發雷擊樣頭痛（thunderclap），峰值 1 min 內到達，VAS 10/10。伴噁心嘔吐 + 畏光 + 頸僵硬。無外傷。BP 165/95、HR 95。家族史：父 SAH 過世。",
+    history: [
+      "LQQOPERA — L（單側 vs 雙側、固定 vs 交替、眼窩後/額/顳/枕）/ Q（脈搏跳 vs 緊繃 vs 雷擊 vs 灼熱 vs 壓迫）/ Quantity（頻率、單次 duration、到 peak 多久、半夜痛醒？）/ O（abrupt vs insidious、發病年齡）",
+      "PER：失眠/壓力/藥物/酒咖啡/姿勢/Valsalva/高海拔/月經",
+      "Associated：畏光畏聲、噁吐、視覺改變、麻木/無力/言語、頭暈",
+      "特殊 patterns：cranial autonomic（流淚/結膜紅/眼瞼下垂/瞳孔變/鼻塞）、premonitory（migraine 數 hr-d 前打哈欠/嗜睡/頸僵）、postdrome",
+      "紅旗 SNOOP10：> 50 yr 新發、抗凝藥、孕婦/產後、免疫缺陷、家族（aneurysm/tumor）、近期外傷、TOCC"
+    ],
+    pe: [
+      "Vital signs（雙臂 BP 排 dissection）+ 體溫",
+      "頭頸 bruits、顳動脈壓痛+搏動（GCA）、顱周神經壓痛",
+      "CN 2-7 重點：CN2 瞳孔對稱+視野 bitemporal hemianopia（pituitary）、fundoscopy papilledema（IICP）；CN3/4/6 EOM；CN5/7 臉感運動",
+      "Kernig sign / Brudzinski sign（meningitis）、頸僵硬",
+      "Focal sign（motor / sensory / cerebellar / DTR）"
+    ],
+    ddx: [
+      "SAH（thunderclap、neck stiffness、Kernig+ → CT 排 → LP 看 xanthochromia）",
+      "Meningitis（發燒+頸僵+畏光）",
+      "ICH（HTN、抗凝、focal）",
+      "GCA（> 50 yr、顳動脈壓痛、jaw claudication、ESR > 50）",
+      "Acute angle-closure glaucoma（眼劇痛+halo+nausea+IOP > 50）",
+      "Migraine / tension / cluster headache（primary）"
+    ],
+    explanation: [
+      "Thunderclap headache 在 1 min 內到 peak、最壞情況是 SAH（subarachnoid hemorrhage），死亡率 30-50%",
+      "SAH 多由 cerebral aneurysm 破裂（80%）、其次 AVM、創傷",
+      "需立即排除幾個急症：SAH、meningitis、ICH、GCA、acute glaucoma",
+      "如都排除則考慮 primary headache（migraine / tension / cluster）",
+      "SNOOP10 紅旗任一即必影像或 LP 排除 secondary"
+    ],
+    treatment: [
+      "急性 migraine：NSAID / triptan（< 2 hr 內）+ antiemetic；避鴉片",
+      "Preventive（≥ 4 d/m 或致殘）：propranolol、topiramate、amitriptyline、CGRP mAb",
+      "Tension：NSAID + lifestyle",
+      "Cluster：100% O2 12-15 L × 15 min + sumatriptan SC；prevention verapamil",
+      "SAH：NCCT 排出血 → CTA → neurosurgery clipping/coiling + nimodipine 21 d 預防 vasospasm",
+      "GCA：immediate prednisolone 1 mg/kg + temporal artery biopsy 2 wk 內",
+      "IICP target：ICP < 20 / CPP > 60 / Osm < 320"
+    ],
+    redFlags: [
+      "Thunderclap onset < 1 min → CT + LP 排 SAH",
+      "Focal neuro sign / GCS↓ → emergent imaging",
+      "發燒 + 頸僵硬 → meningitis（empiric ceftriaxone + vancomycin + dexamethasone）",
+      "> 50 yr 新發 + 顳動脈壓痛 + ESR > 50 → GCA 立即 steroid 不等 biopsy"
+    ],
+  },
+  {
+    id: "kungbi-02",
+    source: "kungbi",
+    tier: "P2",
+    age: 65,
+    sex: "M",
+    department: "內",
+    system: "GI",
+    chiefComplaint: "黃疸 1 月 + 上腹痛轉移背 + 灰白便 + 茶色尿",
+    vignette: "65 歲男性，黃疸 1 個月 + 上腹痛轉移到背 + 灰白便 + 茶色尿 + 體重 -5 kg。HbA1c 9.0。無發燒。Abdomen palpable non-tender GB（Couvosier sign）。疑 pancreatic head cancer / cholangiocarcinoma / CBD stone。",
+    history: [
+      "LQQOPERA — 黃疸開始時間+進程、伴隨腹痛/發燒/體重/食慾變化、糞色/尿色",
+      "過去：HBV/HCV、酒精、藥物（NSAID、acetaminophen、penicillin、TPN）、輸血、自體免疫",
+      "家族：Gilbert / Wilson / PBC / 胰臟癌",
+      "近期旅遊 / 食物 / 性史 / IV drug",
+      "新發 DM 警示（pancreatic ca 可表現為 new DM）"
+    ],
+    pe: [
+      "Vital signs（發燒？）、scleral icterus 程度（從上到下進展指標 mild bili 2-3 / 軀幹 5-7 / 手腳掌 > 10）",
+      "Abdomen：RUQ 壓痛 / Murphy / Couvosier sign（無痛 palpable GB → 排惡性）",
+      "Hepatosplenomegaly、腹水 / caput medusae / spider angiomata",
+      "瘀斑 / petechiae（凝血）、neuro asterixis（HE）",
+      "Lymph node（Virchow node）、PR 看大便顏色"
+    ],
+    ddx: [
+      "Posthepatic / obstructive：pancreatic head cancer（painless + Couvosier）、cholangiocarcinoma、CBD stone（painful + Charcot）、ampullary tumor、IPMN、PSC",
+      "Intrahepatic：viral / alcoholic / drug hepatitis、PBC（AMA+）、cirrhosis、Wilson、HCC",
+      "Prehepatic：hemolysis、Gilbert、massive hematoma 吸收"
+    ],
+    explanation: [
+      "黃疸來自 bilirubin 代謝異常，三分法 prehepatic（unconj、urobilinogen 正常）/ intrahepatic（mixed、AST/ALT↑↑）/ posthepatic（conj、Alk-P/γ-GT↑、灰白便+茶尿）",
+      "灰白便 + 茶色尿表示 conjugated bilirubin 到不了腸子（obstructive）",
+      "Painless jaundice + Couvosier + 體重↓ → 必排 pancreatic head cancer / ampullary tumor",
+      "Painful jaundice + 發燒寒顫 → cholangitis Charcot triad → 急 ERCP",
+      "新發 DM + jaundice → pancreatic head cancer 警示"
+    ],
+    treatment: [
+      "Workup：bilirubin total/direct + AST/ALT/Alk-P/γ-GT/INR/albumin → US（first line：膽管擴張？）→ MRCP（無侵入看膽道樹）→ ERCP（治療性 stone removal / stenting / brush cytology）",
+      "EUS-FNA tumor：診斷+分期",
+      "CT abdomen：胰臟腫瘤 + 局部侵犯 + 遠處轉移分期",
+      "Pancreatic head cancer：可切（< 20%）→ Whipple operation；borderline resectable → neoadjuvant chemo；metastatic → palliative chemo + biliary stenting",
+      "Cholangitis：IV 抗生素（pip-tazo / ceftriaxone+metro）+ 急 ERCP biliary drainage"
+    ],
+    redFlags: [
+      "Charcot（fever+jaundice+RUQ pain）/ Reynolds（+意識+shock）→ 急診 ERCP",
+      "INR > 1.5 + HE → 急性肝衰竭 → transplant 評估",
+      "Painless 黃疸 + 體重 + Couvosier → 必排 pancreatic / biliary cancer"
+    ],
+  },
+  {
+    id: "kungbi-03",
+    source: "kungbi",
+    tier: "P2",
+    age: 38,
+    sex: "F",
+    department: "婦",
+    system: "婦產",
+    chiefComplaint: "G3P1A1 GA 20 週轉診（前診所無接生）",
+    vignette: "38 歲女性 G3P1A1 GA 20 wk，BP 140/85、urine protein/sugar(-)、甲狀腺低下吃 levothyroxine + 鐵劑、地中海貧血（先生未篩）、前胎 39 yr NSD 足月、無 GDM；要求問診 + 衛教。",
+    history: [
+      "GPA（gravida-para-abortion）+ LMP / EDC（月+9 / 日+7+(週期-28)）",
+      "現孕進程：出血 / 腹痛 / 頭痛 / 痙攣 / 胎動 q1-2hr",
+      "過去產檢項目：唐氏症篩 / 羊穿 / NIPT / 高層次 US / NTD AFP / 胎心音 / 羊水量 / B 肝 C 肝 / 子宮頸抹片 / HPV vaccine",
+      "過去剖腹 / NSD / 產後大出血 / preeclampsia / GDM / preterm / 流產 / 死胎",
+      "內外科病：甲狀腺 / DM / HTN / 自體免疫 / thalassemia / G6PD / SLE",
+      "用藥（FDA pregnancy class）+ 過敏 + ABC（菸酒）+ 家族史（先天異常）+ 配偶健康（thalassemia carrier 必篩）"
+    ],
+    pe: [
+      "Vital signs（BP！）+ 體重 / BMI / 增重曲線",
+      "甲狀腺、乳房、骨盆腔、胸腹（fundal height = 週數 ± 2 cm）",
+      "胎心音 doppler 120-160",
+      "胎位 Leopold maneuver（28 wk 後）",
+      "水腫、靜脈曲張"
+    ],
+    ddx: [
+      "Preeclampsia（GA > 20 + BP ≥ 140/90 + 蛋白尿 ≥ 300 mg/24h or sFlt-1/PlGF）",
+      "GDM（24-28 wk OGTT 75g：FPG ≥ 92 / 1hr ≥ 180 / 2hr ≥ 153 任 1 項）",
+      "Thalassemia carriers couple（必篩、1/4 risk major）",
+      "AMA ≥ 35 → NIPT / amnio",
+      "IUGR（fundal height < EGA 2 cm 或 US 估重 < 10%）",
+      "Multiple gestation / placenta previa / accreta / abruption"
+    ],
+    explanation: [
+      "健保 14 次產檢：8 + 12 wk → 30 wk 前 q4 wk（16/20/24/28）→ 36 wk 前 q2 wk（30/32/34/36）→ 40 wk 前 q1 wk",
+      "3 次 superficial US：第 1 次 8-16 wk（胎兒數 / 心跳 / EDC）/ 第 2 次 20 wk（解剖學掃描）/ 第 3 次 32 wk（胎位 / 胎盤 / 羊水）",
+      "特殊週數 lab：8-12 wk 完整篩 / 24-28 wk OGTT GDM / 32 wk repeat VDRL HIV / 35-37 wk GBS culture",
+      "甲狀腺低下懷孕：levothyroxine 通常需要↑ 30-50%；TSH 目標 < 2.5（first trimester）/ < 3（later）",
+      "地中海貧血：兩人都篩，both carrier → 1/4 baby major risk → 諮詢 amnio + DNA"
+    ],
+    treatment: [
+      "第一孕期：戒菸酒、葉酸 0.4-0.8 mg/d、避免 vit A 高劑量、運動 30 min × 5/wk（avoid contact sport / hot tub）",
+      "Tdap 27-36 wk、流感 inactive 任何時期、RhoGAM 28 wk if Rh-",
+      "Preeclampsia mild：close monitor（BP qd、UA q1-2 wk、fetal monitor、delivery 37 wk）",
+      "Preeclampsia severe（BP > 160/110、頭痛、視力、上腹痛、HELLP）：IV magnesium sulfate seizure prophylaxis + IV labetalol/hydralazine + 立即 deliver",
+      "GDM：醫療營養治療 + 血糖監測 q1 month；不達標加 insulin"
+    ],
+    redFlags: [
+      "Preeclampsia severe → IV MgSO4 + 降壓 + deliver",
+      "Eclampsia（seizure）→ MgSO4 + airway",
+      "Placental abruption（painful bleeding + uterine tenderness + fetal distress）→ 急 deliver",
+      "胎動 < 10 次/2 hr（GA > 28 wk）→ NST + BPP",
+      "發燒 + uterine tenderness → chorioamnionitis"
+    ],
+  },
+  {
+    id: "kungbi-04",
+    source: "kungbi",
+    tier: "P3",
+    age: 60,
+    sex: "F",
+    department: "內",
+    system: "腎臟",
+    chiefComplaint: "雙下肢水腫 2 月 + 體重↑ + 泡泡尿",
+    vignette: "60 歲女性，雙下肢水腫 2 月 + 體重 +5 kg + 泡泡尿。吃中草藥 1 yr。BUN 88、Cr 5、eGFR 11、UA proteinuria 4+ + RBC cast、K 5.7。Renal echo bilateral atrophy + hyperechoic。",
+    history: [
+      "Nephrotic 五聯：proteinuria > 3.5 g/d（or PCR > 3）+ hypoalbuminemia < 3.5 + 水腫 + 高血脂 + 高凝",
+      "Nephritic 五聯：hematuria（dysmorphic RBC + RBC cast）+ proteinuria（< 3.5 g）+ HTN + AKI + edema",
+      "上呼吸道 / 皮膚感染史（PSGN / IgA）、體重變化、藥物（NSAID / 中藥馬兜鈴酸 / 顯影劑 / aminoglycoside）",
+      "自體免疫症狀（SLE 紅斑 / 關節 / 漿膜）、B/C 肝病史（MGN / MPGN）、家族（Alport）",
+      "DM 多久 / HbA1c（diabetic nephropathy）、cancer / multiple myeloma 線索"
+    ],
+    pe: [
+      "Vital signs（BP！）+ 水腫分布（局部 vs anasarca）",
+      "蝴蝶斑 / discoid / Heberden（RA / OA）、cutaneous vasculitis / palpable purpura（HSP）",
+      "心肺（pleural effusion / 心包膜炎）、abdomen（腹水、肝脾）",
+      "neurology asterixis（uremia）、Kayser-Fleischer ring（Wilson）"
+    ],
+    ddx: [
+      "Nephrotic：MCD（兒童 77%、selective albuminuria、steroid 反應好）/ FSGS（HIV / heroin / obesity）/ MGN（成人最常見、PLA2R Ab、HBV/HCV / tumor）/ MPGN（HCV、cryoglobulinemia、低 C3）/ Diabetic nephropathy（最常見二發）/ Lupus class V / Amyloidosis",
+      "Nephritic：IgA nephropathy（亞洲最多、URI 後 1-3 d 肉眼血尿）/ PSGN（皮膚/喉嚨後 1-3 wk、C3↓）/ RPGN（crescentic：anti-GBM / ANCA / IC SLE）/ Lupus class III/IV / HSP / Alport / Membranoproliferative"
+    ],
+    explanation: [
+      "腎絲球受損後蛋白漏出 → albumin↓ → 水腫 + 肝代償合成 lipoprotein → 高血脂",
+      "Nephrotic：濾過屏障電荷或結構受損；nephritic：腎絲球發炎 + RBC 漏出",
+      "戒中草藥（馬兜鈴酸傷腎）+ 避免腎毒（NSAID / aminoglycoside / 顯影劑）",
+      "腎切片 biopsy 是分類關鍵 → 決定治療"
+    ],
+    treatment: [
+      "Nephrotic：steroid + immunosuppressant（cyclophosphamide / MMF / rituximab，視類型）",
+      "Nephritic：視病因（PSGN 觀察 / IgA SGLT2i+ACEi / RPGN 急救 plasmapheresis + steroid pulse + cyclophosphamide）",
+      "支持療法：ACEi/ARB 降蛋白尿 + statin 降血脂 + 利尿（careful avoid AKI）+ 低鈉飲食 + protein moderate not restrict",
+      "戒中草藥、避腎毒、疫苗（influenza+pneumococcal）",
+      "eGFR < 30 → 開始 RRT 諮詢（HD / PD / transplant）"
+    ],
+    redFlags: [
+      "Anasarca + 心肺水腫 → 急診",
+      "RPGN（rapidly progressive GN）crescentic → 急 plasmapheresis + pulse steroid",
+      "HE 進展 → uremia 急救 dialysis",
+      "高 K（> 6.5 + EKG change）→ Ca gluconate + insulin/glucose + dialysis"
+    ],
+  },
+  {
+    id: "kungbi-05",
+    source: "kungbi",
+    tier: "P3",
+    age: 50,
+    sex: "F",
+    department: "內",
+    system: "風濕免疫",
+    chiefComplaint: "雙手 MCP/PIP 對稱性僵痛 + 晨僵 > 1 hr 持續 3 月",
+    vignette: "50 歲女性，雙手 MCP / PIP 對稱性僵痛 + 晨僵 > 1 hr 持續 3 月 + 疲倦 + 體重 -3 kg。PE 雙腕腫脹 + squeeze test+。RF+、anti-CCP+、ESR/CRP↑。疑 RA。",
+    history: [
+      "LQQOPERA — 位置：MCP / PIP / 腕 / MTP 對稱多關節（vs OA：DIP / 髖 / 膝、不對稱）",
+      "晨僵 > 1 hr（vs OA < 30 min）、活動後緩解",
+      "全身症狀：疲倦 / 低燒 / 體重 / Sicca symptom",
+      "關節外：rheumatoid nodules（20-35%、肘 olecranon / 受力點）/ episcleritis / scleritis / interstitial lung disease / Felty's syndrome（splenomegaly + neutropenia）/ vasculitis / 心包炎 / pulmonary nodule",
+      "家族（HLA-DR4）/ 抽菸（高 risk）/ 懷孕計劃（DMARD 致畸）",
+      "過去 handedness 影響職業 / 藥物（過去 NSAID / steroid 反應）"
+    ],
+    pe: [
+      "雙手 inspection（swan neck、boutonniere、ulnar deviation、MCP/PIP/wrist 腫脹）",
+      "Squeeze test（MCP/MTP joints squeeze 痛）+ 關節 ROM",
+      "Tinel / Phalen / Finkelstein（鑑別 carpal tunnel / De Quervain）",
+      "頸椎檢查（C1-C2 instability 麻醉前必查 X-ray）",
+      "肺（ILD 線索 fine crackle）、皮膚（rheumatoid nodule）、心音（pericardial rub）"
+    ],
+    ddx: [
+      "RA（對稱+晨僵 > 1 hr+ 多/小關節+ ≥ 6 wk + RF/anti-CCP+）",
+      "OA（DIP Heberden / PIP Bouchard、晨僵 < 30 min、機械痛）",
+      "PsA（dactylitis 香腸指 / nail pitting / 皮膚牛皮癬 / asymmetric / DIP）",
+      "Reactive arthritis（infection 後 1-4 wk、urethritis / conjunctivitis）",
+      "SLE（Jaccoud 形變但可矯正、無 erosion）",
+      "Gout / pseudogout（acute mono）",
+      "Polymyalgia rheumatica（> 50 yr、肩臀近端晨僵、ESR > 50、與 GCA 共病）"
+    ],
+    explanation: [
+      "RA 是慢性自體免疫滑膜炎 → 對稱多關節、軟骨破壞、joint deformity",
+      "RF / anti-CCP+ 預測 erosive disease 風險高",
+      "6 月 window：早期積極 DMARD 治療能避免關節破壞 → treat-to-target DAS28 < 2.6 remission",
+      "關節外併發症高：lung、heart、vasculitis、Felty",
+      "懷孕計劃：MTX 致畸、停藥 ≥ 3 月再受孕"
+    ],
+    treatment: [
+      "First-line: methotrexate（MTX）7.5-25 mg PO weekly + folic acid，2-3 月見效",
+      "無效 / 副作用 → biologics（TNFα、IL-6、JAK inhibitors）",
+      "NSAID + low-dose prednisolone bridge 控發炎、hydroxychloroquine 加成",
+      "MTX 監測：肝 / 肺纖 / 骨髓抑制 → CBC / LFT q1-3m",
+      "TNFα 啟用前：IGRA / CXR 篩 TB（reactivation 風險）+ HBV serology（reactivation）",
+      "疫苗：年度 flu+pneumococcal、live vaccine 限制"
+    ],
+    redFlags: [
+      "Cervical instability C1-C2 → 麻醉前 X-ray（防 spinal cord 損傷）",
+      "Rheumatoid vasculitis（皮膚潰瘍 / mononeuritis multiplex）",
+      "Interstitial lung disease 急惡化 → high-resolution CT",
+      "Felty 嗜中性球減少 → 易感染（敗血症風險）"
+    ],
+  },
+  {
+    id: "kungbi-06",
+    source: "kungbi",
+    tier: "P3",
+    age: 65,
+    sex: "M",
+    department: "內",
+    system: "內分泌/血管",
+    chiefComplaint: "DM 15 yr poor control + 雙下肢麻 + 大拇趾潰瘍 2 wk 不癒",
+    vignette: "65 歲男性，DM 15 yr poor control HbA1c 9 + 雙下肢麻 + 大拇趾潰瘍 2 wk 不癒 + 周邊發紅。PE：light touch / vibration / pin prick / 溫覺**減**、Babinski(-)、ABI 0.6。",
+    history: [
+      "糖尿病控制：被診斷多久 / 目前 HbA1c / 用藥 / 順從性",
+      "足部症狀：疼痛 / 麻木 / 刺痛 / 燒灼 / 腫紅熱 / 破皮 / 水泡 / 潰瘍 / 壞疽 / 間歇跛行 / 冰冷蒼白",
+      "過去：足部潰瘍 / 截肢史 / 視力障礙 / ESRD / CV disease / 抽菸 / 鞋類 / 足部護理",
+      "DM 併發症 5 大：retinopathy / nephropathy / neuropathy / cardiovascular / foot",
+      "近期感染源（蜂窩組織炎警示：紅腫熱痛擴大 / 發燒 / 全身毒）"
+    ],
+    pe: [
+      "Sensation 4 種：10g monofilament 觸 / vibration 128 Hz tuning fork / pin prick / 溫覺",
+      "Dorsalis pedis + posterior tibial pulse + ABI（0.6 = moderate）",
+      "足部畸形：hammer toe / claw toe / Charcot（rocker bottom）/ 拇趾外翻",
+      "潰瘍位置：前足大拇趾 / 前腳掌下方最多、足跟 / 足底中部少",
+      "感染：紅腫熱 / 膿 / lymphangitis red streak / 骨髓炎（probe-to-bone test+）"
+    ],
+    ddx: [
+      "Neuropathic ulcer（painless、足底壓力區、callus 周邊、微血管 OK）",
+      "Ischemic ulcer（painful、外側 / 趾尖、無 callus、pulse↓ ABI < 0.5）",
+      "Mixed neuro-ischemic（最常見）",
+      "Charcot arthropathy（painless 紅腫變形、midfoot rocker bottom、X-ray 看骨破壞）",
+      "Cellulitis vs osteomyelitis（probe-to-bone+、X-ray 骨破壞 6-14 d 後出現、MRI 早期）",
+      "PAOD（已 chapter 6.6）"
+    ],
+    explanation: [
+      "DM 神經病變 + 周邊動脈疾病 + 免疫低下 → 足部潰瘍癒合差 + 感染擴散快",
+      "Wagner 分級：0 無潰瘍 / 1 淺層 / 2 深至韌帶肌腱 / 3 深 + 骨髓炎或膿瘍 / 4 局部壞疽 / 5 廣泛 > 2/3",
+      "Charcot arthropathy = 神經性關節反覆創傷 → 退化破壞，足踝/TMT/MTP 為主",
+      "近 6% 糖尿病有足；0.5-1.5% 需截肢"
+    ],
+    treatment: [
+      "Multi-disciplinary care：(1) 嚴格血糖 HbA1c < 7（年輕）/ < 8（老年）",
+      "(2) 傷口照護：debridement / offloading（total contact cast）/ dressing 適配（hydrogel / foam / alginate）",
+      "(3) 感染控制：抗生素涵蓋 GNB+anaerobe；severe → IV pip-tazo / carbapenem",
+      "(4) 血管評估：ABI / TBI / duplex US / angiogram → revascularization 必要時（PTA / bypass）",
+      "(5) Bone X-ray / MRI 排骨髓炎 → osteomyelitis 至少 6 wk IV 抗生素 ± amputation",
+      "戒菸 + 控血壓血脂 + statin + ACEi"
+    ],
+    redFlags: [
+      "Rest pain / non-healing ulcer > 2 wk → 血管外科會診",
+      "Spreading erythema / fever / 全身毒症 → 急診抗生素 + 外科 debridement",
+      "Probe-to-bone+ → osteomyelitis 必排",
+      "Wet gangrene / sepsis → emergent amputation"
+    ],
+  },
+  {
+    id: "kungbi-07",
+    source: "kungbi",
+    tier: "P3",
+    age: 38,
+    sex: "F",
+    department: "婦",
+    system: "婦產",
+    chiefComplaint: "結婚 1 yr 規律 unprotected sex 未孕",
+    vignette: "38 歲女性，結婚 1 yr 規律 unprotected sex 未孕。BMI 28、月經不規則 q40-60d、多毛+青春痘。TVS 兩側卵巢周邊 ≥ 12 個 2-9 mm 小濾泡 + 卵巢 > 10 mL。Testosterone↑、LH/FSH > 2、AMH↑、TSH 正常。男方 SA 正常。",
+    history: [
+      "不孕定義：< 35 yr 規律未避孕 1 yr / ≥ 35 yr 或 risk factor 6 月",
+      "不孕時間 + 經產史（週期 / 量 / 痛經 / 過去 P/A）",
+      "性史（避孕 / 頻率 / 性功能）",
+      "過去 STI / PID / 化放療 / 手術",
+      "個人史：年齡 / 職業 / 運動 / 壓力 / 飲食 / 體重 / 抽菸 / 藥物",
+      "PCOS 症狀：多毛 / 青春痘 / 雄性禿 / acanthosis nigricans / 月經不規 / 不孕"
+    ],
+    pe: [
+      "Vital signs + BMI",
+      "高雄性素徵象：多毛（Ferriman-Gallwey > 8）/ acne / 雄性禿 / clitoromegaly",
+      "Acanthosis nigricans（頸 / 腋下 / 大腿）→ 胰島素阻抗",
+      "甲狀腺、乳房（galactorrhea → hyperprolactinemia）",
+      "Pelvic exam（uterus / ovary）+ TVS"
+    ],
+    ddx: [
+      "PCOS（Rotterdam 3 中 ≥ 2：月經少 + 高雄性素 + US 多囊）",
+      "WHO class 1 hypo-hypo（過量運動 / 節食）",
+      "WHO class 3 hyper-hypo（POI）",
+      "Hyperprolactinemia（無月經 + 不孕 + 乳漏）",
+      "甲狀腺異常（hypo / hyper）",
+      "Tubal factor（PID / 手術 / TB → HSG）",
+      "子宮因素（adhesion / 黏膜下肌瘤 / polyp / septum）",
+      "男性因素（SA 必查）"
+    ],
+    explanation: [
+      "PCOS 是最常見的內分泌不孕原因，胰島素阻抗 + 高雄性素 + 慢性無排卵互相加重",
+      "Rotterdam criteria 3 中 2：月經少 / 無排卵 + 高雄性素（臨床或血）+ US 多囊",
+      "長期 risk：T2DM、心血管、子宮內膜癌（無 progestin 拮抗）、OSA、NAFLD",
+      "減重 5-10% 即顯著改善排卵 + 胰島素敏感度"
+    ],
+    treatment: [
+      "減重 + 運動 + 低 GI 飲食為核心",
+      "不想懷孕：COC（保護內膜+痘多毛）/ progestin / Mirena IUD",
+      "想懷孕 first-line：Letrozole 2.5 mg PO d3-7（優於 clomiphene）",
+      "Clomiphene 50-150 mg / Metformin 1500 mg/d（改善胰島素+減 GDM）",
+      "Above 失敗 → Gonadotropin 或 IVF",
+      "雄性素（多毛痘）：spironolactone 50-100 mg + COC"
+    ],
+    redFlags: [
+      "OHSS（ovarian hyperstimulation syndrome）IVF 後腹脹 + 體重↑ + 呼吸困難 → 急診",
+      "Endometrial cancer 警示：menstruation 缺 ≥ 3 月 → endometrial biopsy",
+      "GDM / preeclampsia 高風險（懷孕後密切監測）"
+    ],
+  },
+  {
+    id: "kungbi-08",
+    source: "kungbi",
+    tier: "P3",
+    age: 4,
+    sex: "M",
+    department: "兒",
+    system: "感染",
+    chiefComplaint: "發燒 2 d 38°C + 口腔水泡 + 喉嚨痛 + 拒食",
+    vignette: "4 歲男童，發燒 2 d 最高 39°C + 口腔水泡 + 喉嚨痛 + 拒食。阿嬤帶來。PE：口腔後部水泡多、手腳水泡少。診所說腸病毒咽峽炎。家有 2 歲妹妹擔心傳染。",
+    history: [
+      "發燒（天數 + 最高溫 + TOCC）+ 活力（吃飯時哭鬧 / 拒奶）",
+      "ENT+chest：耳水 / 鼻塞 / 咳痰 / 聲音變 / stridor / 喘 / 吞嚥困難",
+      "CV（胸痛 / 水腫）/ GI（食慾 / 嘔 / 瀉）/ GU（尿量 / 色）/ 皮膚（疹）",
+      "新生兒/小兒基本盤：GPA / BBW / NSD or CS / 生產困難 / 先天異常 / 發展 / 疫苗 / 生長百分位",
+      "EV71 重症 risk：嗜睡 / 嘔吐 / myoclonic jerk / 抽搐 / 喘"
+    ],
+    pe: [
+      "Vital signs + 體溫 + 活力",
+      "口腔：水泡位置（HFMD 前部 / Herpangina 後部）+ 扁桃腺",
+      "手腳：HFMD 水泡（手掌 / 腳底 / 膝肘 / 臀）",
+      "ENT：耳鏡（AOM）/ 咽喉化膿 / 頸 LN",
+      "心肺神經：心律 / 喘 / focal sign（EV71 brainstem encephalitis 警示）"
+    ],
+    ddx: [
+      "Common cold / URI（rhinovirus、coronavirus、parainfluenza、RSV）：流鼻+咳+低燒",
+      "HFMD / Herpangina（腸病毒、coxsackie A）：38-39°C + 口腔水泡 + 拒食；EV71 重症 risk",
+      "GAS pharyngitis（Centor criteria：發燒+扁桃腺膿+前頸 LN+無咳嗽）→ rapid strep + abx",
+      "Acute laryngitis / Croup（barking cough + stridor + low fever）",
+      "Epiglottitis（H. influenzae b、急性高燒+drooling+tripod position+no cough → 不刺激不壓舌、急 OR 插管）",
+      "AOM（耳痛 + bulging TM）",
+      "COVID-19"
+    ],
+    explanation: [
+      "腸病毒咽峽炎是常見上呼吸道感染，多 5-7 d 自癒",
+      "EV71 是重症 risk 最高的腸病毒型（腦炎 / 心肌炎 / 神經肌肉）",
+      "腸病毒對酒精無效，必須含氯漂白水 500 ppm（污染物 1000 ppm）",
+      "病毒可在冷凍存活數月，但 50°C 以上熱水迅速失活；紫外線 / 日曬有助",
+      "傳染力強：糞口、飛沫、皮膚水泡接觸；發病前已具傳染力，發病後 1 週內最強"
+    ],
+    treatment: [
+      "支持療法：退燒 acetaminophen 15 mg/kg PO q4-6h（max 75 mg/kg/d）",
+      "鼓勵喝水（mild dehydration → ORS）+ 軟質清淡飲食",
+      "症狀控制：mouthwash（salt water）+ topical analgesic",
+      "EV71 疫苗（自費 2 月-6 yr 開始；2 yr 以下 3 劑、2 yr 以上 2 劑）",
+      "預防：洗手 + 隔離 + 不共用餐具 + 漂白水 500 ppm 消毒玩具/門把",
+      "妹妹隔離：分房 + 分餐具 + 阿嬤照顧時洗手"
+    ],
+    redFlags: [
+      "EV71 重症 5 警示（必教阿嬤）：嗜睡 / 意識改變 / 持續嘔吐 / 手足無力或 myoclonic jerk（心肌炎/腦炎）/ 抽搐 / 呼吸喘心跳快 → 任一即急診",
+      "脫水：< 6 wet diaper / 哭無淚 / 嗜睡 / refill > 2 sec",
+      "二度感染（細菌）：高燒 > 72 hr 不退 + 局部紅腫"
+    ],
+  },
+  {
+    id: "kungbi-09",
+    source: "kungbi",
+    tier: "P3",
+    age: 60,
+    sex: "F",
+    department: "內",
+    system: "神經/眼科",
+    chiefComplaint: "視力模糊 1 wk 從外圍開始黑 + BP 220/110",
+    vignette: "60 歲女性，1 wk 視力模糊從外圍開始黑進行性 + BP 220/110。無頭痛無 focal sign。疑 acute angle-closure glaucoma / pituitary tumor / hypertensive retinopathy / IICP。",
+    history: [
+      "Step 1 單眼 vs 雙眼（遮一隻測）：單眼 → 眼科；雙眼 → 神經",
+      "Step 2 眼睛運動（EOM）+ 眼震",
+      "視覺路徑相關：muscle（Graves' / TED）/ NMJ（MG）/ brain（pituitary tumor / stroke / IICP）/ eye（glaucoma / retinal detachment / CRAO / GCA）",
+      "MG 線索：diurnal worse evening、asymmetric ptosis、EOM limit、近端 weakness、bulbar+respiratory if MuSK Ab+",
+      "急症排除：眼劇痛+halo+nausea（angle-closure）/ painless monocular sudden（CRAO）/ > 50 + headache + jaw claudication（GCA）/ floaters + flashes + curtain（retinal detachment）"
+    ],
+    pe: [
+      "視力（Snellen chart）+ 視野（confrontation / Humphrey）+ pupil 大小+對 light",
+      "EOM 6 cardinal + 眼震 + 眼瞼下垂",
+      "Fundoscopy：papilledema（IICP）/ cherry red spot（CRAO）/ retinal hemorrhage / cotton wool spots（HTN）",
+      "IOP（指尖觸 / Goldmann tonometry）",
+      "顳動脈壓痛（GCA）/ 神經學 focal sign / Cushing triad（IICP）"
+    ],
+    ddx: [
+      "Acute angle-closure glaucoma（眼劇痛+halo+nausea+IOP > 50+中等散瞳 5-6 mm）",
+      "Central retinal artery occlusion CRAO（painless monocular sudden + cherry red spot, 90 min window）",
+      "GCA / temporal arteritis（> 50+headache+jaw claudication+ESR+monocular vision loss）",
+      "Retinal detachment（floaters+flashes+curtain）",
+      "Stroke / TIA（focal sign）",
+      "Pituitary tumor / apoplexy（bitemporal hemianopia）",
+      "MG（diurnal、asymmetric ptosis、EOM limit、peek/lid twitch/curtain sign）",
+      "CO 中毒（多人 + 假性 SpO2 正常 + carboxyHb）",
+      "Hypertensive retinopathy / encephalopathy（BP 220/110）"
+    ],
+    explanation: [
+      "視力模糊 + HTN 220/110 必須先排：(1) acute angle-closure glaucoma (2) hypertensive retinopathy / encephalopathy (3) stroke (4) GCA",
+      "急性 angle-closure glaucoma 是眼科急診，IOP > 50 → 不治療幾小時內 permanent vision loss",
+      "GCA 不治療幾天到幾週對側眼也會失明 → 立即 prednisolone 1 mg/kg + temporal artery biopsy 2 wk",
+      "CRAO 90 min window：digital ocular massage + IV acetazolamide + paracentesis",
+      "Pituitary tumor bitemporal hemianopia：MRI sella + 內分泌全套（prolactin、cortisol、TSH）"
+    ],
+    treatment: [
+      "Acute angle-closure glaucoma：carbachol（pilocarpine）+ timolol + acetazolamide PO + 必要時 mannitol IV → laser iridotomy 確定治療",
+      "Hypertensive emergency：IV nicardipine / labetalol，第 1 hr 降幅 < 25%、目標 6 hr < 160/100",
+      "Stroke：CT 排出血 → 若 ischemic + < 4.5 hr alteplase；大血管 + < 24 hr thrombectomy",
+      "GCA：immediate prednisolone 1 mg/kg（不等 biopsy）+ temporal artery biopsy 2 wk 內",
+      "CRAO：digital massage + IV acetazolamide + anterior chamber paracentesis（時間關鍵）",
+      "MG：pyridostigmine + steroid + thymectomy 評估"
+    ],
+    redFlags: [
+      "突發單眼視力喪失 → CRAO / GCA / retinal detachment 急診",
+      "Halo + 眼痛 + 頭痛 → angle-closure glaucoma 急診",
+      "Floaters + flashes + curtain → retinal detachment",
+      "雙眼 vision change + 神經症狀 → stroke / pituitary apoplexy / IICP",
+      "Diplopia + headache → 排 stroke / aneurysm / GCA"
     ],
   }
 ];
